@@ -1,0 +1,127 @@
+export default {
+  async fetch() {
+    return new Response(`<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>راحة - برودة الرياح والطبيعة</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Amiri',serif}
+body{background:#0a0e12;color:#e8f0e8}
+.hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero img{position:absolute;width:100%;height:100%;object-fit:cover;filter:brightness(.5)}
+.hero-content{position:relative;z-index:2;padding:20px}
+.hero h1{font-size:75px;line-height:1.1;text-shadow:0 10px 30px #000}
+.hero p{font-size:24px;margin-top:20px;opacity:.9}
+.quote-section{max-width:900px;margin:80px auto;padding:0 20px}
+.quote{background:linear-gradient(135deg,#1a2a1e,#132019);border-right:4px solid #6abf69;padding:30px 25px;border-radius:20px;margin:30px 0;font-size:22px;line-height:1.9;box-shadow:0 15px 40px rgba(0,0,0,.4)}
+.quote span{display:block;margin-top:15px;font-size:16px;opacity:.6;color:#6abf69}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;padding:20px;max-width:1400px;margin:auto}
+.gallery img{width:100%;height:300px;object-fit:cover;border-radius:18px;transition:.4s;filter:brightness(.9) saturate(1.1)}
+.gallery img:hover{transform:scale(1.04);filter:brightness(1.1)}
+.section-title{text-align:center;font-size:45px;margin:70px 0 20px}
+.sub{opacity:.6;text-align:center;margin-bottom:30px;font-size:18px}
+.footer{padding:80px 20px;text-align:center;opacity:.5}
+@media(max-width:600px){.hero h1{font-size:42px}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400">
+<div class="hero-content">
+<h1>برودة الرياح<br>راحة القلب</h1>
+<p>40 لحظة من الطبيعة لتهدئة روحك</p>
+</div>
+</div>
+
+<div class="quote-section">
+<div class="quote">حين تهب الرياح الباردة بين الأشجار، تشعر أن الطبيعة تعانقك وتقول لك: اهدأ، كل شيء سيمر.
+<span>— هدوء الطبيعة</span></div>
+<div class="quote">ليست الراحة في كثرة الكلام، بل في نسمة باردة، في صمت الغابة، وفي نظرة لجبل بعيد.
+<span>— راحة نفسية</span></div>
+<div class="quote">امشِ في الطبيعة وستجد نفسك. الرياح لا تبرد الجسد فقط، بل تغسل الروح.
+<span>— تأمل</span></div>
+</div>
+
+<h2 class="section-title">برودة الصباح</h2>
+<p class="sub">صور تريح العين والقلب</p>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600">
+<img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600">
+<img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600">
+<img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=600">
+<img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=600">
+<img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600">
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600">
+<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600">
+<img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600">
+<img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600">
+</div>
+
+<div class="quote-section">
+<div class="quote">الطبيعة لا تتعجل، ومع ذلك كل شيء يزهر في وقته. كن مثلها.
+<span>— حكمة الرياح</span></div>
+</div>
+
+<h2 class="section-title">غابات وضباب</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=600">
+<img src="https://images.unsplash.com/photo-1510784722466-f2aa9c52fff6?w=600">
+<img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600">
+<img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=600">
+<img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?w=600">
+<img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600">
+<img src="https://images.unsplash.com/photo-1504788363733-507549153474?w=600">
+<img src="https://images.unsplash.com/photo-1520637102912-2df6bb2aec6d?w=600">
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600">
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600">
+</div>
+
+<h2 class="section-title">جبال وسماء</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1486915309851-b0cc1f8a0084?w=600">
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600">
+<img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=600">
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600">
+<img src="https://images.unsplash.com/photo-1454496521982-8f5ad2758b7f?w=600">
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600">
+<img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=600">
+<img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=600">
+<img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600">
+</div>
+
+<h2 class="section-title">ماء وهواء</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600">
+<img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=600">
+<img src="https://images.unsplash.com/photo-1473186505569-9c61870c11f9?w=600">
+<img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600">
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600">
+<img src="https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?w=600">
+<img src="https://images.unsplash.com/photo-1505142468610-359e7bcbe29c?w=600">
+<img src="https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=600">
+<img src="https://images.unsplash.com/photo-1439405326854-014607f694d7?w=600">
+<img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600">
+<img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600">
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600">
+<img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600">
+</div>
+
+<div class="quote-section">
+<div class="quote">خذ نفساً عميقاً... دع برودة الرياح تدخل صدرك وتخرج معها كل هم.
+<span>— راحة</span></div>
+<div class="quote">الطبيعة هي الطبيب الوحيد الذي يشفي دون أن يطلب ثمناً.
+<span>— هدوء</span></div>
+</div>
+
+<div class="footer">موقع راحة - صمم بكل حب للطبيعة والهدوء 🌿<br>profikeuy © 2026</div>
+
+</body>
+</html>`, { headers: { "content-type": "text/html;charset=UTF-8" } });
+  }
+}
