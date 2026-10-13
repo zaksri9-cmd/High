@@ -1,1 +1,30 @@
-addEventListener('fetch', e=>{e.respondWith(new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="6a97888e-site-verification" content="25dee901045b41e2dded411375595969"><title>Verified</title></head><body style="font-family:Arial;padding:30px;text-align:center"><h1>✅ Verified: 6a97888e</h1><p>Code: 25dee901045b41e2dded411375595969</p><p>🌋 Geology | 🧠 Psychology | ❤️ Love Science</p></body></html>`,{headers:{'content-type':'text/html;charset=utf-8'}}))})
+export default {
+  async fetch(request) {
+    const url = new URL(request.url);
+    const step = url.searchParams.get('step') || '1';
+    
+    let html = '';
+    if (step === '1') {
+      html = `<html><head><meta charset="utf-8"><title>Continue</title>
+      <script src="https://al5sm.com/tag.min.js" data-zone="11975699" data-cfasync="false"></script>
+      <script src="https://al5sm.com/tag.min.js" data-zone="11947684" data-cfasync="false"></script>
+      </head><body style="text-align:center;padding:50px;font-family:Arial">
+      <h2>⚠️ الخطوة 1/3 - تحقق</h2><p>بقا 15 ثانية باش تكمل</p>
+      <a href="?step=2" style="padding:15px 30px;background:green;color:white;text-decoration:none;border-radius:10px;display:inline-block;margin-top:20px">التالي ➡️</a>
+      <script src="https://al5sm.com/tag.min.js" data-zone="11947685" data-cfasync="false"></script>
+      </body></html>`;
+    } else if (step === '2') {
+      html = `<html><head><meta charset="utf-8"><title>Step 2</title>
+      <script src="https://al5sm.com/tag.min.js" data-zone="11975699" data-cfasync="false"></script>
+      </head><body style="text-align:center;padding:50px">
+      <h2>الخطوة 2/3</h2><a href="?step=3" style="padding:15px 30px;background:blue;color:white;text-decoration:none;border-radius:10px;display:inline-block">متابعة ➡️</a>
+      <script src="https://al5sm.com/tag.min.js" data-zone="11947685" data-cfasync="false"></script>
+      </body></html>`;
+    } else {
+      html = `<html><head><meta charset="utf-8"><title>Done</title></head><body style="text-align:center;padding:50px">
+      <h1>✅ تم التحقق ${Math.random().toString(16).slice(2,10)}</h1>
+      <p>شكرا ❤️</p></body></html>`;
+    }
+    return new Response(html, {headers: {'content-type': 'text/html;charset=utf-8'}});
+  }
+}
