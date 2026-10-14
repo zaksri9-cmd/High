@@ -1,10 +1,11 @@
 export default {
   async fetch(request, env) {
+    const ip = request.headers.get("cf-connecting-ip") || "unknown";
+    const country = request.cf?.country || "XX";
+    console.log(`IP-${ip} ZONE-${country}`);
     const url = new URL(request.url);
     if (url.pathname === "/stats-pc") {
-      const ip = request.headers.get("cf-connecting-ip") || "0.0.0.0";
-      const c = request.cf?.country || "XX";
-      return new Response(`<h1>✅ خدام</h1><p>IP: ${ip}</p><p>Country: ${c}</p>`, {headers:{"content-type":"text/html;charset=utf-8"}});
+      return new Response(`IP: ${ip} Country: ${country}`, {headers:{"content-type":"text/html"}});
     }
     if (env.ASSETS) return env.ASSETS.fetch(request);
     return fetch(request);
