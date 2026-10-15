@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101510">
+
+  <title>GreenEdge — Discover More</title>
+
+  <meta name="description" content="Discover useful ideas, digital resources and fresh content with GreenEdge.">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="/" aria-label="GreenEdge home">
+      <span class="logo-mark">G</span>
+      <span>GREEN<span class="accent">EDGE</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#discover">Discover</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <a class="header-link" href="#discover">Explore <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          YOUR NEXT DISCOVERY STARTS HERE
+        </p>
+
+        <h1>
+          Find your next
+          <span class="accent">great idea.</span>
+        </h1>
+
+        <p class="hero-description">
+          Explore useful resources, discover fresh content
+          and find something worth your time.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#discover">
+            Start Exploring <span>→</span>
+          </a>
+          <a class="text-link" href="#about">Learn more ↗</a>
+        </div>
+
+        <div class="hero-note">
+          <span class="note-line"></span>
+          SIMPLE IDEAS. BETTER DISCOVERIES.
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-frame">
+          <div class="visual-top">
+            <span>GE / 001</span>
+            <span>OPEN YOUR WORLD</span>
+          </div>
+
+          <div class="visual-art">
+            <div class="art-square square-one"></div>
+            <div class="art-square square-two"></div>
+            <div class="art-square square-three"></div>
+            <div class="art-center">G<span>.</span></div>
+          </div>
+
+          <div class="visual-bottom">
+            <span>THINK DIFFERENT.</span>
+            <span>01 — 03</span>
+          </div>
+        </div>
+
+        <div class="floating-label">
+          <span class="status-dot"></span>
+          MADE FOR DISCOVERY
+        </div>
+      </div>
+    </section>
+
+    <section class="discover-section" id="discover">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION / 01</p>
+          <h2>Explore the <span class="accent">possibilities.</span></h2>
+        </div>
+
+        <p class="section-description">
+          A starting point for ideas, useful content
+          and new discoveries.
+        </p>
+      </div>
+
+      <div class="content-grid">
+        <article class="content-card">
+          <span class="card-number">01 / DISCOVER</span>
+          <div class="card-icon">↗</div>
+          <h3>Fresh Perspectives</h3>
+          <p>Find new ideas and explore topics that spark your curiosity.</p>
+          <a href="#about" class="card-link">Explore more <span>→</span></a>
+        </article>
+
+        <article class="content-card featured-card">
+          <span class="card-number">02 / EXPLORE</span>
+          <div class="card-icon">◇</div>
+          <h3>Useful Resources</h3>
+          <p>Discover helpful resources selected to make your browsing worthwhile.</p>
+          <a href="#about" class="card-link">See what's inside <span>→</span></a>
+        </article>
+
+        <article class="content-card">
+          <span class="card-number">03 / CONNECT</span>
+          <div class="card-icon">⌘</div>
+          <h3>Digital Discovery</h3>
+          <p>Explore the digital world through a clean and simple experience.</p>
+          <a href="#about" class="card-link">Find out more <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div>
+        <p class="eyebrow">ABOUT GREENEDGE</p>
+        <h2>Less noise.<br><span class="accent">More value.</span></h2>
+      </div>
+
+      <p class="about-description">
+        GreenEdge is a simple digital destination built
+        around discovery, clarity and useful content.
+        Explore at your own pace.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="logo footer-logo" href="#home">
+      <span class="logo-mark">G</span>
+      <span>GREEN<span class="accent">EDGE</span></span>
+    </a>
+
+    <p>© <span id="year">2026</span> GreenEdge. All rights reserved.</p>
+
+    <a href="#home" class="back-to-top">BACK TO TOP ↑</a>
+  </footer>
+</body>
+</html>
