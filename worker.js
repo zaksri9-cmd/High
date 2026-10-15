@@ -1,54 +1,57 @@
 export default {
-async fetch(request, env, ctx) {
-const url = new URL(request.url);
+  async fetch(request, env) {
+    const url = new URL(request.url);
 
-const data = {
-  time: new Date().toISOString(),
-  path: url.pathname,
-  referrer: request.headers.get("Referer") || "direct",
-  country: request.cf?.country || "unknown",
-  userAgent: request.headers.get("User-Agent") || "unknown"
-};
-
-console.log(JSON.stringify(data));
-
-if (url.pathname === "/health") {
-  return Response.json({
-    status: "ok",
-    message: "Worker is running"
-  });
-}
-
-const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 20px;
-      line-height: 1.7;
-      color: #222;
+    if (request.method !== "GET" && request.method !== "HEAD") {
+      return new Response("Method Not Allowed", {
+        status: 405,
+        headers: { Allow: "GET, HEAD" }
+      });
     }
-    h1 { color: #2457a7; }
-  </style>
-</head>
-<body>
-  <h1>Welcome to Our Website</h1>
-  <p>Discover useful articles, ideas, and resources.</p>
-</body>
-</html>`;
 
-return new Response(html, {
-  headers: {
-    "Content-Type": "text/html; charset=UTF-8",
-    "Cache-Control": "no-store",
-    "X-Content-Type-Options": "nosniff"
+    const headers = {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "X-Frame-Options": "SAMEORIGIN"
+    };
+
+    if (url.pathname === "/health") {
+      return new Response("OK", {
+        headers: {
+          ...headers,
+          "Content-Type": "text/plain; charset=utf-8"
+        }
+      });
+    }
+
+    // Serve the site through Cloudflare Assets when configured.
+    if (env.ASSETS) {
+      const response = await env.ASSETS.fetch(request);
+
+      if (response.status !== 404) {
+        const newHeaders = new Headers(response.headers);
+
+        for (const [key, value] of Object.entries(headers)) {
+          newHeaders.set(key, value);
+        }
+
+        return new Response(
+          request.method === "HEAD" ? null : response.body,
+          {
+            status: response.status,
+            statusText: response.statusText,
+            headers: newHeaders
+          }
+        );
+      }
+    }
+
+    return new Response("Site assets are not configured.", {
+      status: 503,
+      headers: {
+        ...headers,
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    });
   }
-});
-}
 };
