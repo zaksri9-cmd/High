@@ -1,39 +1,7 @@
-export default {
-  async fetch(request, env, ctx) {
-    const html = `<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profikeuy - Best Content</title>
-    <style>
-        body { font-family: sans-serif; background: #111; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center; }
-        .box { max-width: 600px; padding: 30px; background: #1e1e1e; border-radius: 15px; }
-        h1 { color: #2ecc71; }
-        p { color: #aaa; line-height: 1.6; }
-        .btn { display: inline-block; margin-top: 20px; padding: 12px 25px; background: #2ecc71; color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; }
-    </style>
-</head>
-<body>
-    <div class="box">
-        <h1>Welcome to Profikeuy</h1>
-        <p>Your premium destination for games, apps and entertainment. Click continue to explore the latest content.</p>
-        <a class="btn" href="#" onclick="location.reload()">Continue Browsing</a>
-        <p style="font-size:12px; margin-top:20px;">High quality content updated daily.</p>
-    </div>
-
-    <!-- Adexium Ad Code -->
-    <script type="text/javascript" src="https://cdn.tgads.space/assets/js/adexium-widget.min.js"></script>
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', () => {
-            const adexiumWidget = new AdexiumWidget({wid: '28e00450-8958-42a3-9e8a-6074e50416b3', adFormat: 'interstitial'});
-            adexiumWidget.autoMode();
-        });
-    </script>
-</body>
-</html>`;
-    return new Response(html, {
-      headers: { "Content-Type": "text/html;charset=UTF-8" },
+<script type="text/javascript" src="https://cdn.tgads.space/assets/js/adexium-widget.min.js"></script>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        const adexiumWidget = new AdexiumWidget({wid: '28e00450-8958-42a3-9e8a-6074e50416b3', adFormat: 'interstitial'});
+        adexiumWidget.autoMode();
     });
-  },
-};
+</script>
