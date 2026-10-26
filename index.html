@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111114">
+  <meta name="description" content="منصة للبالغين (+18) بتصميم سريع ومتوافق مع الهواتف.">
+  <title>AFTERHOURS — +18</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+    <div class="age-card">
+      <div class="brand brand-large"><span class="brand-mark">A</span> AFTERHOURS</div>
+      <p class="eyebrow">مساحة مخصصة للبالغين</p>
+      <h1 id="ageTitle">هل تبلغ 18 عامًا أو أكثر؟</h1>
+      <p class="muted">هذا الموقع مخصص للبالغين فقط. بالمتابعة، تؤكد أنك بلغت السن القانوني في بلدك.</p>
+      <button class="button primary full" id="confirmAge">نعم، عمري 18 عامًا أو أكثر</button>
+      <button class="button secondary full" id="leaveSite">خروج</button>
+      <small class="muted">تأكيد العمر هذا واجهة أولية، وليس نظام تحقق قانونيًا مستقلًا.</small>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="AFTERHOURS الصفحة الرئيسية"><span class="brand-mark">A</span> AFTERHOURS <span class="age-tag">18+</span></a>
+    <label class="search-wrap"><span class="sr-only">ابحث في المحتوى</span><input id="searchInput" type="search" placeholder="ابحث عن محتوى..." autocomplete="off"><span aria-hidden="true">⌕</span></label>
+    <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+  </header>
+
+  <nav class="nav-bar" id="navBar" aria-label="التصنيفات">
+    <button class="nav-item active" data-filter="all">الرئيسية</button>
+    <button class="nav-item" data-filter="video">فيديوهات</button>
+    <button class="nav-item" data-filter="photo">صور</button>
+    <button class="nav-item" data-filter="new">الأحدث</button>
+  </nav>
+
+  <main class="container">
+    <section class="ad-slot ad-top" aria-label="مساحة إعلانية">
+      <span class="ad-label">إعلان</span>
+      <!-- ADKES EF: ضع كود إعلان AdKesef هنا بعد التأكد من شروط الشبكة -->
+      <div class="ad-placeholder">مساحة إعلانية — AdKesef</div>
+    </section>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">اكتشف المحتوى</p>
+        <h1>مساحة ترفيهية<br><span>بتجربة بسيطة وسريعة</span></h1>
+        <p class="hero-copy">تصفح التصنيفات بسهولة من هاتفك أو حاسوبك.</p>
+        <a href="#content" class="button primary">تصفح المحتوى <span aria-hidden="true">←</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="art-orb"></div><div class="art-line"></div><span>18+</span></div>
+    </section>
+
+    <div class="section-heading" id="content">
+      <div><p class="eyebrow">مختار لك</p><h2 id="contentHeading">المحتوى المميز</h2></div>
+      <span class="result-count" id="resultCount">6 عناصر</span>
+    </div>
+
+    <section class="content-grid" id="contentGrid" aria-live="polite">
+      <article class="media-card" data-type="video" data-new="true" data-search="فيديو ليلي مميز">
+        <div class="thumbnail thumb-one"><span class="type-pill">فيديو</span><span class="play-icon">▶</span><span class="duration">08:24</span></div>
+        <div class="card-info"><h3>اختيار المحرر — إصدار ليلي</h3><p>محتوى تجريبي · +18</p></div>
+      </article>
+      <article class="media-card" data-type="photo" data-new="true" data-search="صور فنية">
+        <div class="thumbnail thumb-two"><span class="type-pill">صور</span><span class="photo-icon">▧</span></div>
+        <div class="card-info"><h3>مجموعة صور فنية</h3><p>معرض صور · +18</p></div>
+      </article>
+      <article class="media-card" data-type="video" data-new="false" data-search="مشاهد سينمائية">
+        <div class="thumbnail thumb-three"><span class="type-pill">فيديو</span><span class="play-icon">▶</span><span class="duration">12:06</span></div>
+        <div class="card-info"><h3>مشاهد سينمائية</h3><p>محتوى تجريبي · +18</p></div>
+      </article>
+      <article class="media-card" data-type="photo" data-new="false" data-search="معرض مختار">
+        <div class="thumbnail thumb-four"><span class="type-pill">صور</span><span class="photo-icon">▧</span></div>
+        <div class="card-info"><h3>معرض مختار</h3><p>معرض صور · +18</p></div>
+      </article>
+
+      <div class="ad-slot ad-inline" aria-label="مساحة إعلانية">
+        <span class="ad-label">إعلان</span>
+        <!-- ADKES EF: ضع كود إعلان AdKesef هنا -->
+        <div class="ad-placeholder">مساحة إعلانية — AdKesef</div>
+      </div>
+
+      <article class="media-card" data-type="video" data-new="true" data-search="لقطات مختارة">
+        <div class="thumbnail thumb-five"><span class="type-pill">فيديو</span><span class="play-icon">▶</span><span class="duration">06:51</span></div>
+        <div class="card-info"><h3>لقطات مختارة</h3><p>محتوى تجريبي · +18</p></div>
+      </article>
+      <article class="media-card" data-type="photo" data-new="true" data-search="صور جديدة">
+        <div class="thumbnail thumb-six"><span class="type-pill">صور</span><span class="photo-icon">▧</span></div>
+        <div class="card-info"><h3>صور جديدة</h3><p>معرض صور · +18</p></div>
+      </article>
+    </section>
+
+    <div class="empty-state" id="emptyState" hidden>لا توجد نتائج مطابقة. جرّب كلمة أخرى.</div>
+
+    <section class="ad-slot ad-bottom" aria-label="مساحة إعلانية">
+      <span class="ad-label">إعلان</span>
+      <!-- ADKES EF: ضع كود إعلان AdKesef هنا -->
+      <div class="ad-placeholder">مساحة إعلانية — AdKesef</div>
+    </section>
+
+    <section class="notice"><span>ⓘ</span><p>هذا قالب تجريبي. استبدل بطاقات المحتوى التجريبية بروابط ووسائط تملك حق نشرها، وتأكد من أن المحتوى قانوني ومخصص للبالغين. لا تستخدم إعلانات مضللة أو نوافذ منبثقة دون موافقة واضحة.</p></section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#"><span class="brand-mark">A</span> AFTERHOURS</a>
+    <div class="footer-links"><a href="#privacy">الخصوصية</a><a href="#terms">الشروط</a><a href="#contact">اتصل بنا</a></div>
+    <p>© <span id="year"></span> AFTERHOURS · للبالغين +18 فقط</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
