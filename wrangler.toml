@@ -1,0 +1,10 @@
+"$schema" = "./node_modules/wrangler/config-schema.json"
+name = "my-spa"
+main = "src/index.js"
+upload_source_maps = true
+# Set this to today's date
+compatibility_date = "2026-10-27"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
