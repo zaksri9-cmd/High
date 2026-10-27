@@ -44,4 +44,4 @@
   });
 })();
 // IMPORTANT: Replace this with an inbox you control before publishing.
-window.SITE_EMAIL = 'REPLACE_WITH_YOUR_EMAIL';
+window.SITE_EMAIL = 'zakariaelasri499@gmail.com';
