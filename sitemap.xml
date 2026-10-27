@@ -1,20 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://proffitecno.com/</loc></url>
-  <url><loc>https://proffitecno.com/guides.html</loc></url>
-  <url><loc>https://proffitecno.com/about.html</loc></url>
-  <url><loc>https://proffitecno.com/contact.html</loc></url>
-  <url><loc>https://proffitecno.com/privacy.html</loc></url>
-  <url><loc>https://proffitecno.com/terms.html</loc></url>
-  <url><loc>https://proffitecno.com/dmca.html</loc></url>
-  <url><loc>https://proffitecno.com/2257.html</loc></url>
-  <url><loc>https://proffitecno.com/articles/privacy-first-browsing.html</loc></url>
-  <url><loc>https://proffitecno.com/articles/responsible-platforms.html</loc></url>
-  <url><loc>https://proffitecno.com/articles/deceptive-ads.html</loc></url>
-  <url><loc>https://proffitecno.com/articles/secure-payments.html</loc></url>
-  <url><loc>https://proffitecno.com/articles/cookies-and-tracking.html</loc></url>
-  <url><loc>https://proffitecno.com/articles/healthy-boundaries.html</loc></url>
-  <url><loc>https://proffitecno.com/articles/consent-and-rights.html</loc></url>
-  <url><loc>https://proffitecno.com/articles/mobile-safety.html</loc></url>
-  <url><loc>https://proffitecno.com/articles/accessible-design.html</loc></url>
+
+  <url>
+    <loc>https://proffitecno.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/guides.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/contact.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/privacy.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/terms.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/dmca.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/consent-and-rights.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/cookies-and-tracking.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/deceptive-ads.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/healthy-boundaries.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/mobile-safety.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/privacy-first-browsing.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/responsible-platforms.html</loc>
+  </url>
+
+  <url>
+    <loc>https://proffitecno.com/secure-payments.html</loc>
+  </url>
+
 </urlset>
