@@ -36,7 +36,7 @@
   if (form) form.addEventListener('submit', ev => {
     ev.preventDefault();
     const email = window.SITE_EMAIL || 'zakariaelasri499@gmail.com';
-    if (email.includes('REPLACE_')) { alert('Before using the form, update SITE_EMAIL in assets/site.js with your real contact email.'); return; }
+    if (email.includes('REPLACE_')) { alert('Before using the form, update SITE_EMAIL in site.js with your real contact email.'); return; }
     const fd = new FormData(form);
     const subject = encodeURIComponent('[Afterglow website] ' + String(fd.get('subject') || 'Message'));
     const body = encodeURIComponent('Name: ' + fd.get('name') + '\nReply-to: ' + fd.get('email') + '\n\n' + fd.get('message'));
