@@ -101,14 +101,3 @@
 
 
 
-
-    
-    if (email.includes('REPLACE_')) { alert('Before using the form, update SITE_EMAIL in site.js with your real contact email.'); return; }
-    const fd = new FormData(form);
-    const subject = encodeURIComponent('[Afterglow website] ' + String(fd.get('subject') || 'Message'));
-    const body = encodeURIComponent('Name: ' + fd.get('name') + '\nReply-to: ' + fd.get('email') + '\n\n' + fd.get('message'));
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-  });
-})();
-// IMPORTANT: Replace this with an inbox you control before publishing.
-window.SITE_EMAIL = '          ';
