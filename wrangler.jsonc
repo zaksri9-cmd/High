@@ -8,10 +8,8 @@
     {
       "name": "EMAIL"
     }
-  ]
-}
-
-,
-"vars": {
-  "CONTACT_TO": "zakariaelasrio884@gmail.com"
+  ],
+  "vars": {
+    "CONTACT_TO": "zakariaelasrio884@gmail.com"
+  }
 }
