@@ -111,7 +111,7 @@
 
 .mini-article-content {
   min-width: 0;
-padding: 6px 10px 250px;  display: flex;
+padding: 6px 9px 250px;  display: flex;
   flex-direction: column;
   justify-content: center;
 }
