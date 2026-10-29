@@ -68,7 +68,73 @@
   }
 }
 
+/* Fix the hero article cards */
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 14px;
+  padding: 18px;
+}
 
+.mini-article {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.mini-article:hover {
+  border-color: var(--pink);
+  background: rgba(242, 120, 173, 0.07);
+}
+
+.mini-article img {
+  display: block;
+  width: 88px;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.mini-article-content {
+  min-width: 0;
+}
+
+.mini-article h3 {
+  margin: 0 0 5px;
+  font: 700 14px/1.35 Manrope, sans-serif;
+  color: var(--text);
+}
+
+.mini-article p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 850px) {
+  .hero-side {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .mini-article {
+    grid-template-columns: 80px minmax(0, 1fr);
+  }
+
+  .mini-article img {
+    width: 80px;
+    height: 72px;
+  }
+}
 
 
 
