@@ -69,68 +69,52 @@
 
 
 
-
-/* Fix the hero article cards */
+/* Match hero heights and fill the side cards */
 .hero {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: 20px;
   align-items: stretch;
+  gap: 20px;
 }
 
-.hero-main {
-  min-width: 0;
-  height: 100%;
+.hero-main,
+.hero-side {
+  height: 410px;
+  min-height: 410px;
+  box-sizing: border-box;
 }
 
 .hero-side {
-  min-width: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  align-content: stretch;
-}
-
-.mini-article {
-  min-width: 0;
-  min-height: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
+
+.mini-article {
+  flex: 1 1 0;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 38% minmax(0, 1fr);
   gap: 0;
+  padding: 0;
+  box-sizing: border-box;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--panel2);
 }
 
 .mini-article img {
-  display: block;
   width: 100%;
-  height: 150px;
-  flex-shrink: 0;
+  height: 100%;
+  min-height: 0;
   object-fit: cover;
   border-radius: 0;
 }
 
 .mini-article-content {
-  flex: 1;
   min-width: 0;
-  padding: 12px;
-}
-
-.mini-article h3 {
-  margin: 0 0 6px;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.mini-article p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media (max-width: 850px) {
@@ -138,39 +122,20 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .hero-main,
   .hero-side {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: auto;
+    height: auto;
+    min-height: 0;
   }
 
-  .mini-article img {
-    height: 160px;
-  }
-}
-
-@media (max-width: 480px) {
   .hero-side {
-    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
   }
 
   .mini-article {
-    display: grid;
-    grid-template-columns: 120px minmax(0, 1fr);
-    align-items: stretch;
-  }
-
-  .mini-article img {
-    width: 120px;
-    height: 100%;
     min-height: 110px;
   }
-
-  .mini-article-content {
-    padding: 12px;
-  }
 }
-
-
 
 
 
