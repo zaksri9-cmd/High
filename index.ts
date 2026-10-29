@@ -5,21 +5,49 @@ interface Env {
       from: string;
       subject: string;
       text: string;
-      html?: string;
     }): Promise<{ messageId: string }>;
   };
   CONTACT_TO: string;
 }
 
+const ALLOWED_ORIGINS = [
+  "https://proffitecno.com",
+  "https://www.proffitecno.com",
+];
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    const headers = {
+    const origin = request.headers.get("Origin") || "";
+    const allowed = ALLOWED_ORIGINS.includes(origin);
+
+    const headers: Record<string, string> = {
       "Content-Type": "application/json; charset=utf-8",
+      "Vary": "Origin",
     };
 
+    if (allowed) {
+      headers["Access-Control-Allow-Origin"] = origin;
+      headers["Access-Control-Allow-Methods"] = "POST, OPTIONS";
+      headers["Access-Control-Allow-Headers"] = "Content-Type";
+    }
+
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        status: 204,
+        headers,
+      });
+    }
+
+    if (!allowed) {
+      return Response.json(
+        { error: "Origin not allowed" },
+        { status: 403, headers }
+      );
+    }
+
     if (request.method !== "POST") {
-      return new Response(
-        JSON.stringify({ error: "Method not allowed" }),
+      return Response.json(
+        { error: "Method not allowed" },
         { status: 405, headers }
       );
     }
@@ -45,15 +73,15 @@ export default {
         message.length > 5000 ||
         !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
       ) {
-        return new Response(
-          JSON.stringify({ error: "بيانات غير صالحة" }),
+        return Response.json(
+          { error: "بيانات غير صالحة" },
           { status: 400, headers }
         );
       }
 
       if (!env.CONTACT_TO) {
-        return new Response(
-          JSON.stringify({ error: "Contact email is not configured" }),
+        return Response.json(
+          { error: "Contact email is not configured" },
           { status: 500, headers }
         );
       }
@@ -68,13 +96,13 @@ export default {
           `الرسالة:\n${message}`,
       });
 
-      return new Response(
-        JSON.stringify({ success: true }),
+      return Response.json(
+        { success: true },
         { status: 200, headers }
       );
     } catch {
-      return new Response(
-        JSON.stringify({ error: "تعذر إرسال الرسالة" }),
+      return Response.json(
+        { error: "تعذر إرسال الرسالة" },
         { status: 500, headers }
       );
     }
