@@ -19,18 +19,12 @@ export default {
         
         const txt = await res.text();
         if (!res.ok) return Response.json({ ok: false, error: txt }, { status: 500 });
-        
         return Response.json({ ok: true });
       } catch (e: any) {
         return Response.json({ ok: false, error: e.message }, { status: 500 });
       }
     }
 
-    // مهم باش السيت يرجع يخدم
-    try {
-      return await env.ASSETS.fetch(request);
-    } catch {
-      return new Response('Not found', { status: 404 });
-    }
+    return env.ASSETS.fetch(request);
   }
 } as ExportedHandler<any>;
