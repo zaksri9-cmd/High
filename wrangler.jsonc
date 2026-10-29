@@ -1,9 +1,15 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "high",
+  "main": "./index.ts",
+  "compatibility_date": "2026-10-29",
   "send_email": [
     {
       "name": "EMAIL",
       "remote": true
     }
-  ]
+  ],
+  "vars": {
+    "CONTACT_TO": "zakariawork488@gmail.com"
+  }
 }
