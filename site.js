@@ -32,10 +32,77 @@
       if (empty) empty.classList.toggle('hidden', visible !== 0);
     });
   }
-  const form = $('#contact-form');
-  if (form) form.addEventListener('submit', ev => {
-    ev.preventDefault();
-    const email = window.SITE_EMAIL || '             ';
+ 
+ const form = $('#contact-form');
+
+  if (form) {
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+
+      const button = form.querySelector('[type="submit"]');
+      const originalText = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Sending...';
+
+      let status = form.querySelector('#contact-status');
+
+      if (!status) {
+        status = document.createElement('p');
+        status.id = 'contact-status';
+        status.setAttribute('role', 'status');
+        form.appendChild(status);
+      }
+
+      status.textContent = '';
+
+      try {
+        const fd = new FormData(form);
+
+        const response = await fetch(
+          'https://high.profikeuy.workers.dev',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              name: fd.get('name'),
+              email: fd.get('email'),
+              subject: fd.get('subject'),
+              message: fd.get('message')
+            })
+          }
+        );
+
+
+
+        
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.error || 'Sending failed');
+        }
+
+        status.textContent = 'Message sent successfully.';
+        form.reset();
+      } catch (error) {
+        status.textContent =
+          'Could not send the message. Please try again later.';
+      } finally {
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    });
+  }
+})();
+
+
+
+
+
+
+
+    
     if (email.includes('REPLACE_')) { alert('Before using the form, update SITE_EMAIL in site.js with your real contact email.'); return; }
     const fd = new FormData(form);
     const subject = encodeURIComponent('[Afterglow website] ' + String(fd.get('subject') || 'Message'));
