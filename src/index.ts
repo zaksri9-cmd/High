@@ -2,31 +2,35 @@ export default {
   async fetch(request: Request, env: any): Promise<Response> {
     const url = new URL(request.url);
 
-    // API ديال الكونتاكت
     if (url.pathname === '/api/contact' && request.method === 'POST') {
       try {
         const { name, email, message } = await request.json() as any;
-
-        if (!name || !email || !message) {
-          return Response.json({ ok: false, error: 'Missing fields' }, { status: 400 });
-        }
-
-        await env.EMAIL.send({
-          from: 'welcome@proffitecno.com',
-          to: 'zakariaelasrio884@gmail.com',
-          subject: `New contact from ${name}`,
-          text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-          html: `<p><b>Name:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Message:</b><br>${message.replace(/\n/g, '<br>')}</p>`
+        
+        const res = await fetch('https://api.mailchannels.net/tx/v1/send', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            personalizations: [{ to: [{ email: 'zakariaelasrio884@gmail.com' }] }],
+            from: { email: 'contact@proffitecno.com', name: 'Proffitecno' },
+            subject: `رسالة من ${name}`,
+            content: [{ type: 'text/plain', value: `الاسم: ${name}\nالايميل: ${email}\n\n${message}` }]
+          })
         });
-
+        
+        const txt = await res.text();
+        if (!res.ok) return Response.json({ ok: false, error: txt }, { status: 500 });
+        
         return Response.json({ ok: true });
       } catch (e: any) {
-        return Response.json({ ok: false, error: e.message || String(e) }, { status: 500 });
+        return Response.json({ ok: false, error: e.message }, { status: 500 });
       }
     }
 
-    // سيرڤي الملفات العادية
-    // @ts-ignore
-    return env.ASSETS.fetch(request);
+    // مهم باش السيت يرجع يخدم
+    try {
+      return await env.ASSETS.fetch(request);
+    } catch {
+      return new Response('Not found', { status: 404 });
+    }
   }
-} satisfies ExportedHandler<any>;
+} as ExportedHandler<any>;
