@@ -2,26 +2,48 @@ export default {
   async fetch(request: Request, env: any): Promise<Response> {
     const url = new URL(request.url);
 
-    if (url.pathname === '/api/contact' && request.method === 'POST') {
+    if (url.pathname === "/api/contact" && request.method === "POST") {
       try {
-        const { name, email, message } = await request.json() as any;
-        
-        const res = await fetch('https://api.mailchannels.net/tx/v1/send', {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({
-            personalizations: [{ to: [{ email: 'zakariaelasrio884@gmail.com' }] }],
-            from: { email: 'contact@proffitecno.com', name: 'Proffitecno' },
-            subject: `رسالة من ${name}`,
-            content: [{ type: 'text/plain', value: `الاسم: ${name}\nالايميل: ${email}\n\n${message}` }]
-          })
+        const data = await request.json() as {
+          name: string;
+          email: string;
+          message: string;
+        };
+
+        const name = String(data.name || "").trim();
+        const email = String(data.email || "").trim();
+        const message = String(data.message || "").trim();
+
+        if (!name || !email || !message) {
+          return Response.json(
+            { ok: false, error: "Please complete all fields." },
+            { status: 400 }
+          );
+        }
+
+        await env.EMAIL.send({
+          from: "welcome@proffitecno.com",
+          to: "zakariaelasrio884@gmail.com",
+          replyTo: email,
+          subject: `New website message from ${name}`,
+          text:
+            `Name: ${name}\n` +
+            `Email: ${email}\n\n` +
+            `Message:\n${message}`
         });
-        
-        const txt = await res.text();
-        if (!res.ok) return Response.json({ ok: false, error: txt }, { status: 500 });
+
         return Response.json({ ok: true });
-      } catch (e: any) {
-        return Response.json({ ok: false, error: e.message }, { status: 500 });
+
+      } catch (error: any) {
+        console.error("Email sending error:", error);
+
+        return Response.json(
+          {
+            ok: false,
+            error: "Unable to send your message. Please try again."
+          },
+          { status: 500 }
+        );
       }
     }
 
