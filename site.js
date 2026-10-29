@@ -35,7 +35,7 @@
   const form = $('#contact-form');
   if (form) form.addEventListener('submit', ev => {
     ev.preventDefault();
-    const email = window.SITE_EMAIL || 'zakariaelasri499@gmail.com';
+    const email = window.SITE_EMAIL || '             ';
     if (email.includes('REPLACE_')) { alert('Before using the form, update SITE_EMAIL in site.js with your real contact email.'); return; }
     const fd = new FormData(form);
     const subject = encodeURIComponent('[Afterglow website] ' + String(fd.get('subject') || 'Message'));
@@ -44,4 +44,4 @@
   });
 })();
 // IMPORTANT: Replace this with an inbox you control before publishing.
-window.SITE_EMAIL = 'zakariaelasri499@gmail.com';
+window.SITE_EMAIL = '          ';
