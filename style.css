@@ -143,3 +143,22 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
+
+
+
+
+.brand-mark img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
