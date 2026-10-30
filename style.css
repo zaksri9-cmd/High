@@ -259,14 +259,14 @@ padding: 0px 10px 0px;  display: flex;
   .hero {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 30px !important;
+    gap: 20px !important;
   }
 
   /* البطاقة الأولى */
   .hero-main {
     width: 100% !important;
     height: auto !important;
-    min-height: -97px !important;
+    min-height: 297px !important;
     transform: none !important;
     padding: 28px 23px !important;
   }
