@@ -177,3 +177,17 @@ padding: 0px 10px 0px;  display: flex;
     39% 35%
   );
 }
+
+
+
+/* Slightly rebalance homepage cards */
+@media (min-width: 851px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+}
+
+
+
+
+
