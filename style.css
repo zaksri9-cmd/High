@@ -85,8 +85,8 @@
 
 .hero-main,
 .hero-side {
-  height: 410px;
-  min-height: 410px;
+  height: 110px;
+  min-height: 80px;
   box-sizing: border-box;
 }
 
