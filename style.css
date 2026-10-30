@@ -218,8 +218,8 @@ padding: 0px 10px 0px;  display: flex;
 
 /* التحكم في البطاقة الأولى فقط */
 .hero-main {
-  height: 450px;      /* طول البطاقة */
-  min-height: 450px;  /* أقل طول للبطاقة */
+  height: 150px;      /* طول البطاقة */
+  min-height: 50px;  /* أقل طول للبطاقة */
 }
 
 
