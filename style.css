@@ -248,4 +248,12 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
+/* إطالة البطاقة الأولى على الهاتف فقط */
+@media (max-width: 798px) {
+  .card:first-child {
+    min-height: 320px;
+  }
+}
+
+
 
