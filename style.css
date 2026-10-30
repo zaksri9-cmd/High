@@ -188,30 +188,5 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
-/* FREE SPACE BEFORE CARDS */
-:root {
-  --free-space: 508px;
-}
-
-.hero {
-  margin-top: var(--free-space) !important;
-}
 
 
-
-
-
-
-.hero-main{
-  width:100%;
-  height:240px;
-  min-height:240px;
-  margin-top:18px;
-}
-
-.hero-side{
-  width:100%;
-  height:380px;
-  min-height:380px;
-  margin-top:18px;
-}
