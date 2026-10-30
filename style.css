@@ -358,7 +358,7 @@ padding: 0px 10px 0px;  display: flex;
   height: var(--image-desktop-height);
   /* التحكم في ارتفاع الصورة */
 
-  object-fit: cover;
+  object-fit: contain;
   /* ملء الإطار دون تشويه الصورة */
 
   object-position: var(--image-desktop-position);
