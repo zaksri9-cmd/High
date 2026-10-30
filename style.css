@@ -436,13 +436,16 @@ padding: 0px 10px 0px;  display: flex;
   }
 
 
-  /* بقية محتوى الهاتف */
-  #second-card > p:not(#second-card-label),
-  #second-card > h2,
-  #second-card > a {
-    grid-column: 1;
-    /* جعل المحتوى في العمود الوحيد */
-  }
+ /* صورة الهاتف */
+#second-card .article-second-image {
+  grid-column: 1;
+  grid-row: auto;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: var(--image-mobile-radius);
+}
 
 }
 /* نهاية إعدادات الهاتف */
