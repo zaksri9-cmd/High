@@ -287,3 +287,162 @@ padding: 0px 10px 0px;  display: flex;
     height: auto !important;
   }
 }
+
+
+
+
+
+
+
+
+/* ==========================================
+   التحكم في صورة المقال الثانية فقط
+   الحاسوب والهاتف بإعدادات مستقلة
+========================================== */
+
+
+/* ==========================================
+   1- إعدادات الحاسوب
+========================================== */
+
+:root {
+  --image-desktop-width: 240px;   /* عرض الصورة بالبكسل */
+  --image-desktop-height: 180px;  /* ارتفاع الصورة بالبكسل */
+  --image-desktop-gap: 20px;      /* المسافة بين العنوان والصورة */
+  --image-desktop-radius: 8px;    /* تدوير زوايا الصورة */
+  --image-desktop-position: center; /* موضع الصورة داخل الإطار */
+}
+
+
+/* القسم الثاني فقط */
+#second-card {
+  display: grid; /* تفعيل نظام تقسيم العناصر */
+
+  grid-template-columns:
+    minmax(0, 1fr) var(--image-desktop-width);
+  /* العمود الأول للنص والثاني للصورة */
+
+  gap: var(--image-desktop-gap);
+  /* المسافة بين العمودين */
+}
+
+
+/* العبارة الصغيرة */
+#second-card-label {
+  grid-column: 1 / -1;
+  /* جعل العبارة تمتد على كامل العرض */
+}
+
+
+/* العنوان الرئيسي */
+#second-card-title {
+  grid-column: 1;
+  /* وضع العنوان في العمود الأول */
+
+  grid-row: 2;
+  /* وضع العنوان في الصف الثاني */
+}
+
+
+/* الصورة بجانب العنوان */
+#second-card .article-second-image {
+  grid-column: 2;
+  /* وضع الصورة في العمود الثاني */
+
+  grid-row: 2;
+  /* وضع الصورة في الصف الثاني */
+
+  width: 100%;
+  /* جعل الصورة تملأ عرض العمود */
+
+  height: var(--image-desktop-height);
+  /* التحكم في ارتفاع الصورة */
+
+  object-fit: cover;
+  /* ملء الإطار دون تشويه الصورة */
+
+  object-position: var(--image-desktop-position);
+  /* التحكم في الجزء الظاهر من الصورة */
+
+  border-radius: var(--image-desktop-radius);
+  /* التحكم في استدارة الحواف */
+}
+
+
+/* الفقرات والعنوان الفرعي والأزرار */
+#second-card > p:not(#second-card-label),
+#second-card > h2,
+#second-card > a {
+  grid-column: 1 / -1;
+  /* جعل المحتوى التالي يمتد على كامل العرض */
+}
+
+
+/* ==========================================
+   2- إعدادات الهاتف المستقلة
+========================================== */
+
+@media (max-width: 600px) {
+  /* تطبيق الإعدادات على الشاشات حتى 600px */
+
+
+  #second-card {
+    --image-mobile-width: 20%;
+    /* عرض الصورة في الهاتف */
+
+    --image-mobile-height: 80px;
+    /* ارتفاع الصورة في الهاتف */
+
+    --image-mobile-gap: 12px;
+    /* المسافة بين عناصر القسم */
+
+    --image-mobile-radius: 2px;
+    /* استدارة حواف الصورة في الهاتف */
+
+    grid-template-columns: 1fr;
+    /* تحويل القسم إلى عمود واحد */
+
+    gap: var(--image-mobile-gap);
+    /* تطبيق المسافة المحددة */
+  }
+
+
+  /* عنوان الهاتف */
+  #second-card-title {
+    grid-column: 1;
+    /* وضع العنوان في العمود الأول */
+
+    grid-row: auto;
+    /* ترك ترتيب الصف تلقائياً */
+  }
+
+
+  /* صورة الهاتف */
+  #second-card .article-second-image {
+    grid-column: 1;
+    /* وضع الصورة في العمود الأول */
+
+    grid-row: auto;
+    /* ترتيب الصورة تلقائياً */
+
+    width: var(--image-mobile-width);
+    /* عرض الصورة حسب إعدادات الهاتف */
+
+    height: var(--image-mobile-height);
+    /* ارتفاع الصورة حسب إعدادات الهاتف */
+
+    border-radius: var(--image-mobile-radius);
+    /* حواف الصورة للهاتف */
+  }
+
+
+  /* بقية محتوى الهاتف */
+  #second-card > p:not(#second-card-label),
+  #second-card > h2,
+  #second-card > a {
+    grid-column: 1;
+    /* جعل المحتوى في العمود الوحيد */
+  }
+
+}
+/* نهاية إعدادات الهاتف */
