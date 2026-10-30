@@ -216,24 +216,48 @@ padding: 0px 10px 0px;  display: flex;
 }
 
 
-/* التحكم في البطاقة الأولى فقط */
+/* =====================================
+   HERO MAIN - INDEPENDENT CONTROL
+   تحكم مستقل في البطاقة الأولى
+===================================== */
+
 .hero-main {
-  height: 150px;      /* طول البطاقة */
-  min-height: 50px;  /* أقل طول للبطاقة */
+
+  /* الحجم */
+  --card-width: 100%;
+  --card-height: 150px;
+
+  /* الموقع */
+  --move-x: 0px;
+  --move-y: 0px;
+
+  /* الشكل */
+  --card-radius: 4px;
+  --card-border: 1px;
+  --card-padding: 20px;
+
+  width: var(--card-width) !important;
+  height: var(--card-height) !important;
+  min-height: 0 !important;
+
+  position: relative !important;
+  left: var(--move-x) !important;
+  top: var(--move-y) !important;
+
+  transform: none !important;
+
+  box-sizing: border-box;
+  border-radius: var(--card-radius);
+  border-width: var(--card-border);
+  padding: var(--card-padding);
 }
 
-
-
-
-
-/* التحكم في البطاقة الأولى */
-.hero-main {
-  width: 100%;       /* العرض */
-  height: 150px;     /* الطول */
-  border-radius: 5px; /* الحواف */
-  left: 011px;         /* يمين ويسار */
-  top: 0px;          /* فوق وتحت */
-  position: relative;
+/* الهاتف */
+@media (max-width: 600px) {
+  .hero-main {
+    --card-width: 100%;
+    --card-height: 150px;
+  }
 }
 
 
