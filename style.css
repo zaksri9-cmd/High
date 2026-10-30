@@ -210,61 +210,38 @@ padding: 0px 10px 0px;  display: flex;
 }
 
 
-/* تحريك البطاقة الأولى فقط */
-.hero-main {
-  transform: translateY(-370px);
+/* Restore original card sizes only */
+.hero {
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 24px;
 }
 
-
-/* =====================================
-   HERO MAIN - INDEPENDENT CONTROL
-   تحكم مستقل في البطاقة الأولى
-===================================== */
-
 .hero-main {
-
-  /* الحجم */
-  --card-width: 30%;
-  --card-height: 100px;
-
-  /* الموقع */
-  --move-x: 0px;
-  --move-y: 0px;
-
-  /* الشكل */
-  --card-radius: 6px;
-  --card-border: 1px;
-  --card-padding: 20px;
-
-  width: var(--card-width) !important;
-  height: var(--card-height) !important;
-  min-height: 0 !important;
-
-  position: relative !important;
-  left: var(--move-x) !important;
-  top: var(--move-y) !important;
-
+  width: auto !important;
+  height: auto !important;
+  min-height: 410px !important;
   transform: none !important;
-
-  box-sizing: border-box;
-  border-radius: var(--card-radius);
-  border-width: var(--card-border);
-  padding: var(--card-padding);
+  top: auto !important;
+  left: auto !important;
 }
 
-/* الهاتف */
-@media (max-width: 600px) {
-  .hero-main {
-    --card-width: 100%;
-    --card-height: 150px;
-  }
+.hero-side {
+  height: auto !important;
+  min-height: 250px !important;
+  padding: 28px !important;
 }
-/* MOBILE CARD GAP CONTROL */
-/* زيادة المسافة بين البطاقتين على الهاتف فقط */
 
 @media (max-width: 850px) {
   .hero {
-    row-gap: 75px !important;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-main {
+    min-height: 405px !important;
+  }
+
+  .hero-side {
+    min-height: 0 !important;
   }
 }
 
