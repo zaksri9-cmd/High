@@ -225,3 +225,19 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
+
+/* التحكم في البطاقة الأولى */
+.hero-main {
+  width: 100%;       /* العرض */
+  height: 150px;     /* الطول */
+  border-radius: 5px; /* الحواف */
+  left: 011px;         /* يمين ويسار */
+  top: 0px;          /* فوق وتحت */
+  position: relative;
+}
+
+
+
+
+
+
