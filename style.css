@@ -200,7 +200,7 @@ padding: 0px 10px 0px;  display: flex;
 
 /* تحريك البطاقة الأولى فقط */
 .hero-main {
-  transform: translateY(30px);
+  transform: translateY(-390px);
 }
 
 
