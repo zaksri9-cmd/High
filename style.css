@@ -259,7 +259,14 @@ padding: 0px 10px 0px;  display: flex;
     --card-height: 150px;
   }
 }
+/* MOBILE CARD GAP CONTROL */
+/* زيادة المسافة بين البطاقتين على الهاتف فقط */
 
+@media (max-width: 850px) {
+  .hero {
+    row-gap: 75px !important;
+  }
+}
 
 
 
