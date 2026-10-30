@@ -190,7 +190,7 @@ padding: 0px 10px 0px;  display: flex;
 
 
 :root {
-  --cards-space: 50px;
+  --cards-space: 2220px;
 }
 
 .cards-spacer {
