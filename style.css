@@ -224,7 +224,7 @@ padding: 0px 10px 0px;  display: flex;
 .hero-main {
 
   /* الحجم */
-  --card-width: 100%;
+  --card-width: 30%;
   --card-height: 150px;
 
   /* الموقع */
