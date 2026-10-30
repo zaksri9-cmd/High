@@ -198,12 +198,10 @@ padding: 0px 10px 0px;  display: flex;
 }
 
 
-/* التحكم في المسافة أسفل البطاقة الأولى */
+/* تحريك البطاقة الأولى فقط */
 .hero-main {
-  margin-bottom: 340px;
+  transform: translateY(30px);
 }
-
-
 
 
 
