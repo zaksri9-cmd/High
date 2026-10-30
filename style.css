@@ -212,10 +212,15 @@ padding: 0px 10px 0px;  display: flex;
 
 /* تحريك البطاقة الأولى فقط */
 .hero-main {
-  transform: translateY(-390px);
+  transform: translateY(-370px);
 }
 
 
+/* التحكم في البطاقة الأولى فقط */
+.hero-main {
+  height: 450px;      /* طول البطاقة */
+  min-height: 450px;  /* أقل طول للبطاقة */
+}
 
 
 
