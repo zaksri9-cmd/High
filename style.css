@@ -474,7 +474,7 @@ padding: 0px 10px 0px;  display: flex;
 
   padding-top: 10px;              /* فراغ داخلي من الأعلى */
   padding-bottom: 10px;           /* فراغ داخلي من الأسفل */
-  padding-left: 35px;              /* إبعاد الكتابة عن اليسار */
+  padding-left: 10px;              /* إبعاد الكتابة عن اليسار */
   padding-right: 8px;             /* إبعاد الكتابة عن اليمين */
 
   min-height: 0px;                /* أقل ارتفاع */
@@ -482,7 +482,7 @@ padding: 0px 10px 0px;  display: flex;
 
   position: relative;
   top: 0px;                       /* تحريك عمودي */
-  left: 5px;                      /* تحريك أفقي */
+  left: -5px;                      /* تحريك أفقي */
 
   box-sizing: border-box;
 }
