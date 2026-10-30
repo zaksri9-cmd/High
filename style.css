@@ -225,14 +225,14 @@ padding: 0px 10px 0px;  display: flex;
 
   /* الحجم */
   --card-width: 30%;
-  --card-height: 150px;
+  --card-height: 100px;
 
   /* الموقع */
   --move-x: 0px;
   --move-y: 0px;
 
   /* الشكل */
-  --card-radius: 4px;
+  --card-radius: 6px;
   --card-border: 1px;
   --card-padding: 20px;
 
