@@ -190,7 +190,7 @@ padding: 0px 10px 0px;  display: flex;
 
 /* FREE SPACE BEFORE CARDS */
 :root {
-  --free-space: 50px;
+  --free-space: 508px;
 }
 
 .hero {
