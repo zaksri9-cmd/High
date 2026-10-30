@@ -259,7 +259,7 @@ padding: 0px 10px 0px;  display: flex;
   .hero {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 20px !important;
+    gap: 30px !important;
   }
 
   /* البطاقة الأولى */
