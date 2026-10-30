@@ -449,3 +449,40 @@ padding: 0px 10px 0px;  display: flex;
 
 }
 /* نهاية إعدادات الهاتف */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* مساحة مستقلة للتحكم في HIGH */
+#second-card > #second-card-label {
+  display: block !important;
+
+  grid-column: 1 / -1;
+
+  margin-top: 30px !important;    /* المسافة فوق الكتابة */
+  margin-bottom: 18px;            /* المسافة تحت الكتابة */
+
+  padding-top: 10px;              /* فراغ داخلي من الأعلى */
+  padding-bottom: 10px;           /* فراغ داخلي من الأسفل */
+  padding-left: 8px;              /* إبعاد الكتابة عن اليسار */
+  padding-right: 8px;             /* إبعاد الكتابة عن اليمين */
+
+  min-height: 0px;                /* أقل ارتفاع */
+  width: 100%;                    /* عرض المساحة */
+
+  position: relative;
+  top: 0px;                       /* تحريك عمودي */
+  left: 0px;                      /* تحريك أفقي */
+
+  box-sizing: border-box;
+}
