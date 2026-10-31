@@ -593,3 +593,80 @@ padding: 0px 10px 0px;  display: flex;
   height: 133px;      /* الارتفاع */
   object-fit: contain; /* إظهار الصورة كاملة دون قص */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================================
+   إعدادات عنوان البطاقة - الحاسوب
+   ================================= */
+
+#first-card-title {
+  color: #FFFF00; /* لون أصفر ناصع */
+  font-size: 22px; /* حجم الخط */
+
+  margin-top: 15px;    /* المسافة من الأعلى */
+  margin-right: 10px;  /* المسافة من اليمين */
+  margin-bottom: 20px; /* المسافة من الأسفل */
+  margin-left: 10px;   /* المسافة من اليسار */
+
+  padding-top: 5px;    /* حشو داخلي من الأعلى */
+  padding-right: 5px;  /* حشو داخلي من اليمين */
+  padding-bottom: 5px; /* حشو داخلي من الأسفل */
+  padding-left: 5px;   /* حشو داخلي من اليسار */
+
+  transform: translate(0px, 0px); /* تحريك أفقي وعمودي */
+  text-shadow: 0 0 5px #FFFF00; /* توهج أصفر */
+}
+
+
+/* =================================
+   إعدادات عنوان البطاقة - الهاتف
+   ================================= */
+
+@media (max-width: 600px) {
+  #first-card-title {
+    font-size: 19px; /* حجم الخط في الهاتف */
+
+    margin-top: 10px;    /* المسافة من الأعلى */
+    margin-right: 5px;   /* المسافة من اليمين */
+    margin-bottom: 15px; /* المسافة من الأسفل */
+    margin-left: 5px;    /* المسافة من اليسار */
+
+    padding-top: 3px;    /* حشو داخلي من الأعلى */
+    padding-right: 3px;  /* حشو داخلي من اليمين */
+    padding-bottom: 3px; /* حشو داخلي من الأسفل */
+    padding-left: 3px;   /* حشو داخلي من اليسار */
+
+    transform: translate(0px, 0px); /* تحريك أفقي وعمودي */
+  }
+}
+
+
+
+
+
