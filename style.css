@@ -589,7 +589,7 @@ padding: 0px 10px 0px;  display: flex;
 
 /* التحكم في حجم الصورة دون قص */
 .first-card-top .article-second-image {
-  width: 190px;       /* العرض */
-  height: 130px;      /* الارتفاع */
+  width: 195px;       /* العرض */
+  height: 133px;      /* الارتفاع */
   object-fit: contain; /* إظهار الصورة كاملة دون قص */
 }
