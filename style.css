@@ -654,8 +654,8 @@ padding: 0px 10px 0px;  display: flex;
 
     margin-top: 20px;    /* المسافة من الأعلى */
     margin-right: 5px;   /* المسافة من اليمين */
-    margin-bottom: 15px; /* المسافة من الأسفل */
-    margin-left: 5px;    /* المسافة من اليسار */
+    margin-bottom: 5px; /* المسافة من الأسفل */
+    margin-left: 19px;    /* المسافة من اليسار */
 
     padding-top: 3px;    /* حشو داخلي من الأعلى */
     padding-right: 3px;  /* حشو داخلي من اليمين */
