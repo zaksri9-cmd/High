@@ -659,7 +659,7 @@ padding: 0px 10px 0px;  display: flex;
 
     padding-top: 3px;    /* حشو داخلي من الأعلى */
     padding-right: 3px;  /* حشو داخلي من اليمين */
-    padding-bottom: 3px; /* حشو داخلي من الأسفل */
+    padding-bottom: -3px; /* حشو داخلي من الأسفل */
     padding-left: 3px;   /* حشو داخلي من اليسار */
 
     transform: translate(0px, 0px); /* تحريك أفقي وعمودي */
