@@ -666,9 +666,14 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
-/* تقليل المسافة بين العنوان والصورة */
-#first-card-top > #first-card-title + img {
-  margin-top: -500px !important;
+
+
+
+
+
+/* إنزال العنوان الأصفر باتجاه الصورة */
+#first-card-title {
+  transform: translateY(45px) !important;
 }
 
 
