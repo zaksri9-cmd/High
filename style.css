@@ -693,3 +693,40 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
+
+
+
+
+
+
+    /* النص الذهبي الغليظ البسيط */
+.gold-bold {
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  color: #D4AF37;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* علامة الدولار ذهبية */
+.dollar-gold {
+  font-weight: 900;
+  font-size: 60px;
+  color: #D4AF37;
+  text-shadow: 1px 1px 2px #8a6d1b;
+}
+
+/* النص العربي */
+.arabic-gold {
+  font-weight: 800;
+  font-size: 24px;
+  color: #D4AF37;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+
+
+
