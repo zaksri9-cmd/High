@@ -668,7 +668,7 @@ padding: 0px 10px 0px;  display: flex;
 
 /* تقليل المسافة بين العنوان والصورة */
 #first-card-top > #first-card-title + img {
-  margin-top: -50px !important;
+  margin-top: -500px !important;
 }
 
 
