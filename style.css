@@ -663,8 +663,51 @@ padding: 0px 10px 0px;  display: flex;
     padding-left: 3px;   /* حشو داخلي من اليسار */
 
     transform: translate(0px, 0px); /* تحريك أفقي وعمودي */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* تقليل الفراغ بين العنوان والصورة في البطاقة الأولى */
+#first-card-title {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* التحكم في المسافة فوق الصورة */
+#first-card-top > .article-second-image {
+  margin-top: -15px !important;
+  display: block;
+}
+
+/* إعداد الهاتف */
+@media (max-width: 600px) {
+  #first-card-title {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #first-card-top > .article-second-image {
+    margin-top: -15px !important;
   }
 }
+
+
+
 
 
 
