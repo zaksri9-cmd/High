@@ -652,7 +652,7 @@ padding: 0px 10px 0px;  display: flex;
   #first-card-title {
     font-size: 19px; /* حجم الخط في الهاتف */
 
-    margin-top: 10px;    /* المسافة من الأعلى */
+    margin-top: 20px;    /* المسافة من الأعلى */
     margin-right: 5px;   /* المسافة من اليمين */
     margin-bottom: 15px; /* المسافة من الأسفل */
     margin-left: 5px;    /* المسافة من اليسار */
