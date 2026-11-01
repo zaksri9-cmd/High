@@ -745,14 +745,14 @@ padding: 0px 10px 0px;  display: flex;
 :root {
   --w: 230px;  /* العرض */
   --h: 135px;  /* الطول */
-  --m: 20px; /* المسافة باش ما تبداش من الأول */
+  --m: 25px; /* المسافة باش ما تبداش من الأول */
 }
 
 .top-images {
   padding-left: var(--m); /* المسافة من اليسار */
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: px;
 }
 
 .top-images img {
