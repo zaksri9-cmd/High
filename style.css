@@ -730,3 +730,32 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
+
+    /* ==========================================
+   التحكم الموحد في جميع صور البطاقة الثانية
+========================================== */
+
+#second-card .article-second-image {
+  width: 150px !important;       /* عرض جميع الصور */
+  height: 130px !important;      /* ارتفاع جميع الصور */
+
+  object-fit: contain !important; /* إظهار الصورة كاملة دون قص */
+
+  margin: 0 auto;                /* توسيط جميع الصور */
+
+  transform: translate(0px, 0px);
+  /* تحريك جميع الصور معاً: أفقي، عمودي */
+}
+
+/* إعدادات الهاتف */
+@media (max-width: 600px) {
+  #second-card .article-second-image {
+    width: 110px !important;
+    height: 100px !important;
+  }
+}
+
+
+
+
+
