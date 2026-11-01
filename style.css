@@ -759,8 +759,8 @@ padding: 0px 10px 0px;  display: flex;
 
 /* التحكم في الصور العشر داخل البطاقة الثانية */
 .top-images img {
-  width: 120px !important;       /* عرض الصورة */
-  height: 90px !important;      /* ارتفاع الصورة */
+  width: 60px !important;       /* عرض الصورة */
+  height: 40px !important;      /* ارتفاع الصورة */
 
   object-fit: contain !important; /* إظهار الصورة كاملة دون قص */
 
