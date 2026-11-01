@@ -728,3 +728,56 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
+
+
+
+
+
+
+
+
+
+/* =====================================
+   التحكم في حجم الصور دون قصّها
+   ===================================== */
+
+/* إعدادات الحاسوب */
+:root {
+  --photo-width: 240px;   /* عرض الصورة */
+  --photo-height: 180px;  /* ارتفاع الصورة */
+}
+
+/* صور البطاقة الأولى والثانية */
+#first-card-top .article-second-image,
+#second-card .article-second-image {
+  width: var(--photo-width) !important;
+  height: var(--photo-height) !important;
+
+  object-fit: contain !important; /* الصورة كاملة دون قص */
+  object-position: center;
+  display: block;
+  max-width: 100%;
+}
+
+/* إعدادات الهاتف */
+@media (max-width: 600px) {
+  :root {
+    --photo-width: 140px;  /* عرض الهاتف */
+    --photo-height: 100px; /* ارتفاع الهاتف */
+  }
+}
+
+/* إعادة لون نص المقال إلى اللون الفاتح */
+.arabic-gold {
+  color: #d9d2df !important;
+}
+
+
+
+
+
+
+
+
+
+
