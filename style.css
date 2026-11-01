@@ -752,7 +752,7 @@ padding: 0px 10px 0px;  display: flex;
   padding-left: var(--m); /* المسافة من اليسار */
   display: flex;
   flex-wrap: wrap;
-  gap: px;
+  gap: 20px;
 }
 
 .top-images img {
