@@ -729,49 +729,47 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
+/* =====================================
+   التحكم الكامل في الصور العشر
+   لا قص - لا حذف - تصغير فقط
+===================================== */
 
+.hero-side .top-images img {
 
-    /* ==========================================
-   التحكم الموحد في جميع صور البطاقة الثانية
-========================================== */
+  /* إعدادات الحاسوب */
+  width: 50px !important;       /* عرض الصورة */
+  height: 35px !important;      /* ارتفاع الصورة */
 
-#second-card .article-second-image {
-  width: 60px !important;       /* عرض جميع الصور */
-  height: 40px !important;      /* ارتفاع جميع الصور */
+  /* التحكم في المسافات */
+  margin-top: 0px !important;    /* المسافة من الأعلى */
+  margin-bottom: 0px !important; /* المسافة من الأسفل */
+  margin-left: 0px !important;   /* المسافة من اليسار */
+  margin-right: 0px !important;  /* المسافة من اليمين */
 
-  object-fit: contain !important; /* إظهار الصورة كاملة دون قص */
-
-  margin: 0 auto;                /* توسيط جميع الصور */
-
-  transform: translate(0px, 0px);
-  /* تحريك جميع الصور معاً: أفقي، عمودي */
+  /* إظهار الصورة كاملة دون قص */
+  object-fit: contain !important;
+  max-width: none !important;
+  flex-shrink: 0 !important;
 }
 
-/* إعدادات الهاتف */
+
+/* =====================================
+   إعدادات الهاتف فقط
+===================================== */
+
 @media (max-width: 600px) {
-  #second-card .article-second-image {
-    width: 70px !important;
-    height: 50px !important;
+
+  .hero-side .top-images img {
+
+    width: 45px !important;       /* عرض الهاتف */
+    height: 32px !important;      /* ارتفاع الهاتف */
+
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+
+    object-fit: contain !important;
   }
+
 }
-
-
-
-/* التحكم في الصور العشر داخل البطاقة الثانية */
-.top-images img {
-  width: 60px !important;       /* عرض الصورة */
-  height: 40px !important;      /* ارتفاع الصورة */
-
-  object-fit: contain !important; /* إظهار الصورة كاملة دون قص */
-
-  max-width: 100%;
-}
-
-/* إعدادات الهاتف */
-@media (max-width: 600px) {
-  .top-images img {
-    width: 80px !important;     /* عرض الصورة على الهاتف */
-    height: 60px !important;    /* ارتفاع الصورة على الهاتف */
-  }
-}
-
