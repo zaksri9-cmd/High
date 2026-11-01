@@ -757,5 +757,21 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
+/* التحكم في الصور العشر داخل البطاقة الثانية */
+.top-images img {
+  width: 120px !important;       /* عرض الصورة */
+  height: 90px !important;      /* ارتفاع الصورة */
 
+  object-fit: contain !important; /* إظهار الصورة كاملة دون قص */
+
+  max-width: 100%;
+}
+
+/* إعدادات الهاتف */
+@media (max-width: 600px) {
+  .top-images img {
+    width: 80px !important;     /* عرض الصورة على الهاتف */
+    height: 60px !important;    /* ارتفاع الصورة على الهاتف */
+  }
+}
 
