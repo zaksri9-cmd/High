@@ -737,8 +737,8 @@ padding: 0px 10px 0px;  display: flex;
 .hero-side .top-images img {
 
   /* إعدادات الحاسوب */
-  width: 50px !important;       /* عرض الصورة */
-  height: 35px !important;      /* ارتفاع الصورة */
+  width: 30px !important;       /* عرض الصورة */
+  height: 20px !important;      /* ارتفاع الصورة */
 
   /* التحكم في المسافات */
   margin-top: 0px !important;    /* المسافة من الأعلى */
