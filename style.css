@@ -737,41 +737,37 @@ padding: 0px 10px 0px;  display: flex;
 
 
 
+
+
 /* =====================================
-   التحكم في حجم الصور دون قصّها
+   التحكم في حجم الصور ديال top-images
    ===================================== */
-
-/* إعدادات الحاسوب */
 :root {
-  --photo-width: 240px;   /* عرض الصورة */
-  --photo-height: 180px;  /* ارتفاع الصورة */
+  --w: 60px;  /* العرض */
+  --h: 45px;  /* الطول */
+  --m: 30px; /* المسافة باش ما تبداش من الأول */
 }
 
-/* صور البطاقة الأولى والثانية */
-#first-card-top .article-second-image,
-#second-card .article-second-image {
-  width: var(--photo-width) !important;
-  height: var(--photo-height) !important;
-
-  object-fit: contain !important; /* الصورة كاملة دون قص */
-  object-position: center;
-  display: block;
-  max-width: 100%;
+.top-images {
+  padding-left: var(--m); /* المسافة من اليسار */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-/* إعدادات الهاتف */
+.top-images img {
+  width: var(--w) !important;
+  height: var(--h) !important;
+  object-fit: contain !important;
+}
+
 @media (max-width: 600px) {
   :root {
-    --photo-width: 140px;  /* عرض الهاتف */
-    --photo-height: 100px; /* ارتفاع الهاتف */
+    --w: 40px; /* عرض الهاتف */
+    --h: 32px; /* طول الهاتف */
+    --m: 15px; /* مسافة الهاتف */
   }
 }
-
-/* إعادة لون نص المقال إلى اللون الفاتح */
-.arabic-gold {
-  color: #d9d2df !important;
-}
-
 
 
 
