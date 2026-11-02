@@ -4,99 +4,154 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Earn from your Films</title>
+<title>Earn from Your Films | Afterglow</title>
 
 <style>
-/* ===== الألوان الذهبية والخلفية ===== */
 :root {
-  --gold: #FFD700;
-  --gold-light: #FFF1A8;
-  --dark: #090909;
+    --gold: #FFD700;
+    --gold-light: #FFF1A8;
+    --dark: #090909;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  color: white;
-  background:
-    radial-gradient(circle at top, #493700 0%, #171100 35%, #050505 75%);
-}
-
-/* ===== الإطار الرئيسي ===== */
-.article {
-  max-width: 950px;
-  margin: 35px auto;
-  padding: 30px;
-  border: 1px solid #B8860B;
-  border-radius: 18px;
-  background: linear-gradient(145deg, #17130a, #080808);
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.16);
-  position: relative;
-  overflow: hidden;
-}
-
-/* ===== رموز الدولار ===== */
-.dollar {
-  text-align: center;
-  font-size: 65px;
-  font-weight: bold;
-  color: var(--gold);
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-  margin: 5px 0 20px;
-}
-
-/* ===== العنوان الذهبي ===== */
-h1 {
-  color: var(--gold);
-  text-align: center;
-  font-size: 30px;
-  margin: 15px 0;
-  text-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
-}
-
-/* ===== الخط الذهبي ===== */
-.gold-line {
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(to right, #8B6508, #FFF1A8, #8B6508);
-  margin: 20px auto 30px;
-  border-radius: 10px;
-}
-
-/* ===== نص المقال ===== */
-p {
-  color: #E8E0C8;
-  font-size: 17px;
-  line-height: 1.9;
-}
-
-/* ===== مساحة الهاتف ===== */
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-
-  .article {
-    margin: 15px auto;
+    margin: 0;
     padding: 20px;
-  }
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at top, #493700 0%, #171100 40%, #050505 85%);
+}
 
-  h1 {
-    font-size: 24px;
-  }
+/* البطاقة الرئيسية الواحدة */
+.article1 {
+    width: 100%;
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 35px;
+    text-align: center;
+    border: 1px solid #B8860B;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #211b0d, #090909);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.16);
+}
 
-  .dollar {
-    font-size: 52px;
-  }
+/* رمز الدولار الذهبي */
+.dollar {
+    width: 110px;
+    height: 110px;
+    margin: 5px auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #FFF1A8, #E4B52D, #A87512);
+    color: #241900;
+    font-size: 72px;
+    font-weight: bold;
+    border: 3px solid #F8DF91;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.35);
+}
 
-  p {
-    font-size: 16px;
-  }
+/* العنوان */
+h1 {
+    color: var(--gold);
+    font-size: 31px;
+    margin: 15px 0;
+    line-height: 1.4;
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.25);
+}
+
+/* الخط الذهبي */
+.gold-line {
+    width: 100px;
+    height: 3px;
+    margin: 22px auto 28px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #8B6508, #FFF1A8, #8B6508);
+}
+
+/* النصوص */
+p {
+    color: #E8E0C8;
+    font-size: 17px;
+    line-height: 1.9;
+    margin: 16px 0;
+}
+
+h2 {
+    color: #F3D477;
+    font-size: 22px;
+    margin: 28px 0 10px;
+}
+
+.gold-text {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* زر الدخول */
+.referral-button {
+    display: block;
+    width: 100%;
+    max-width: 370px;
+    margin: 35px auto 20px;
+    padding: 17px 15px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #C18D18, #FFE88D, #C18D18);
+    color: #211704;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+    box-shadow: 0 5px 22px rgba(255, 215, 0, 0.25);
+    transition: 0.3s ease;
+}
+
+.referral-button:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.12);
+    box-shadow: 0 8px 28px rgba(255, 215, 0, 0.4);
+}
+
+/* ملاحظة أسفل الزر */
+.note {
+    color: #A99B79;
+    font-size: 13px;
+    margin-top: 22px;
+}
+
+/* تنسيق الهاتف */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .article1 {
+        margin: 15px auto;
+        padding: 25px 18px;
+    }
+
+    .dollar {
+        width: 95px;
+        height: 95px;
+        font-size: 62px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
 }
 </style>
 </head>
@@ -104,19 +159,57 @@ p {
 <body>
 
 <main class="article1">
-  <div class="dollar">$</div>
 
-  <h1>Earn from your Films</h1>
+    <div class="dollar">$</div>
 
-  <div class="gold-line"></div>
+    <h1>Earn from Your Films</h1>
 
-  <p>
-    Welcome to our complete guide.
-    Discover how to earn from your films
-    and explore new opportunities.
-  </p>
+    <div class="gold-line"></div>
 
-  <!-- اكتب محتوى مقالك هنا -->
+    <p>
+        Discover new opportunities to share your videos
+        and explore ways to earn from your content.
+    </p>
+
+    <h2>Turn Your Creativity into Opportunity</h2>
+
+    <p>
+        Explore a platform where adult creators can share
+        their content and learn about available monetization
+        opportunities.
+    </p>
+
+    <h2>Freedom and Control</h2>
+
+    <p>
+        Review the platform's privacy settings, creator options,
+        content rules and payment conditions before joining.
+    </p>
+
+    <h2>How Does It Work?</h2>
+
+    <p>
+        Visit the platform, review its requirements,
+        create an account if eligible, and learn how
+        its revenue-sharing system operates.
+    </p>
+
+    <p>
+        Actual earnings depend on the platform's terms,
+        eligibility requirements and audience activity.
+    </p>
+
+    <a
+        class="referral-button"
+        href="https://faphouselink.com/go/GM711"
+        target="_blank"
+        rel="nofollow sponsored noopener">
+        ENTER THE WEBSITE →
+    </a>
+
+    <p class="note">
+        18+ only. Review the platform's terms and privacy policy.
+    </p>
 
 </main>
 
