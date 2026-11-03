@@ -5,7 +5,7 @@
 
 
   
-  }
+
   const toggle = $('#menu-toggle'), nav = $('#main-nav');
   toggle?.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
