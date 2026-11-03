@@ -1,17 +1,10 @@
 (() => {
   const $ = (s, root=document) => root.querySelector(s);
   const $$ = (s, root=document) => [...root.querySelectorAll(s)];
-  const KEY = 'afterglow_age_confirmed_v1';
-  const age = $('#age-screen');
-  if (age) {
-    let accepted = false;
-    try { accepted = sessionStorage.getItem(KEY) === 'yes'; } catch (_) {}
-    if (!accepted) age.classList.add('show');
-    $('#age-yes')?.addEventListener('click', () => {
-      try { sessionStorage.setItem(KEY, 'yes'); } catch (_) {}
-      age.classList.remove('show');
-      document.body.classList.remove('age-locked');
-    });
+
+
+
+  
   }
   const toggle = $('#menu-toggle'), nav = $('#main-nav');
   toggle?.addEventListener('click', () => {
