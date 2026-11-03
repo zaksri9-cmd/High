@@ -351,26 +351,6 @@
   window.AdProvider = window.AdProvider || [];
   window.AdProvider.push({ "serve": {} });
 </script>  <!-- Keep the site's existing age/menu/year behavior. -->
-  <script src="site.js"></script>
-  <script>
-    // Small fallback for the age dialog and mobile menu if site.js has no handlers.
-    (function () {
-    
 
-
-
-
-
-
-
-
-
-      
-      if (menuButton && nav) menuButton.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
-        menuButton.setAttribute('aria-expanded', String(open));
-      });
-    })();
-  </script>
 </body>
 </html>
