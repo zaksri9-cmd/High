@@ -346,15 +346,11 @@
     </div>
   </footer>
 
-<!-- Ad provider: load once and request all three ad zones -->
 <script async src="https://a.magsrv.com/ad-provider.js"></script>
 <script>
   window.AdProvider = window.AdProvider || [];
-  document.querySelectorAll('.ad-slot ins[data-zoneid]').forEach(function () {
-    window.AdProvider.push({ "serve": {} });
-  });
-</script>
-  <!-- Keep the site's existing age/menu/year behavior. -->
+  window.AdProvider.push({ "serve": {} });
+</script>  <!-- Keep the site's existing age/menu/year behavior. -->
   <script src="site.js"></script>
   <script>
     // Small fallback for the age dialog and mobile menu if site.js has no handlers.
