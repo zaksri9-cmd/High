@@ -1,826 +1,839 @@
 <!doctype html>
 <html lang="en">
 <head>
-
-  
-
-
-
-
-
-
-<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
- <ins class="eas6a97888e17" data-zoneid="6072874"></ins> 
- <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
-  <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script> 
- <ins class="eas6a97888e35" data-zoneid="6072866"></ins> 
- <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
-
-  <script type="application/javascript">
-(function() {
-    function randStr(e,t){for(var n="",r=t||"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",o=0;o<e;o++)n+=r.charAt(Math.floor(Math.random()*r.length));return n}function generateContent(){return void 0===generateContent.val&&(generateContent.val="document.dispatchEvent("+randStr(4*Math.random()+3)+");"),generateContent.val}try{Object.defineProperty(document.currentScript,"innerHTML",{get:generateContent}),Object.defineProperty(document.currentScript,"textContent",{get:generateContent})}catch(e){};
-
-    //version 12.0.0
-
-    var adConfig = {
-    "ads_host": "a.pemsrv.com",
-    "syndication_host": "s.pemsrv.com",
-    "idzone": 6072858,
-    "popup_fallback": false,
-    "popup_force": true,
-    "chrome_enabled": true,
-    "new_tab": false,
-    "frequency_period": 60,
-    "frequency_count": 1,
-    "trigger_method": 1,
-    "trigger_class": "",
-    "trigger_delay": 0,
-    "capping_enabled": true,
-    "tcf_enabled": true,
-    "agego_cross_site_enabled": true,
-    "only_inline": false
-};
-
-window.document.querySelectorAll||(document.querySelectorAll=document.body.querySelectorAll=Object.querySelectorAll=function(e,o,t,i,n){var r=document,a=r.createStyleSheet();for(n=r.all,o=[],t=(e=e.replace(/\[for\b/gi,"[htmlFor").split(",")).length;t--;){for(a.addRule(e[t],"k:v"),i=n.length;i--;)n[i].currentStyle.k&&o.push(n[i]);a.removeRule(0)}return o});var popMagic={version:12,cookie_name:"",url:"",config:{},open_count:0,top:null,browser:null,venor_loaded:!1,venor:!1,tcfData:null,native_ad_class:".msg-native-widget-item",remoteLicensedDomains:["exdynsrv.com",atob("ZXhvc3J2LmNvbQ=="),atob("ZXhvY2xpY2suY29t"),"opoxv.com","exacdn.com","pemsrv.com"],configTpl:{ads_host:"",syndication_host:"",idzone:"",frequency_period:720,frequency_count:1,trigger_method:1,trigger_class:"",popup_force:!1,popup_fallback:!1,chrome_enabled:!0,new_tab:!1,cat:"",tags:"",el:"",sub:"",sub2:"",sub3:"",block_ad_types:"",only_inline:!1,trigger_delay:0,capping_enabled:!0,tcf_enabled:!1,agego_cross_site_enabled:!0,cookieconsent:!0,should_fire:function(){return!0},on_redirect:null},isAdsDomainLicensed:function(){for(var e=this.config.ads_host,o=this.remoteLicensedDomains.concat([".local","localhost","127.0.0.1"]),t=0;t<o.length;t++){var i=o[t];if("string"==typeof i)if("."===i.charAt(0)){var n=i,r=i.substring(1);if(e.slice(-n.length)===n||e===r)return!0}else{var a=e===i,c="."+i,p=e.slice(-c.length)===c;if(a||p)return!0}}return!1},init:function(e){if(void 0!==e.idzone&&e.idzone){void 0===e.customTargeting&&(e.customTargeting=[]),window.customTargeting=e.customTargeting||null;var o=Object.keys(e.customTargeting).filter(function(e){return 0<=e.search("ex_")});for(var t in o.length&&o.forEach(function(e){return this.configTpl[e]=null}.bind(this)),this.configTpl)Object.prototype.hasOwnProperty.call(this.configTpl,t)&&(void 0!==e[t]?this.config[t]=e[t]:this.config[t]=this.configTpl[t]);if(void 0!==this.config.idzone&&""!==this.config.idzone){!0!==this.config.only_inline&&this.isAdsDomainLicensed()&&this.loadHosted();var i=this;this.checkTCFConsent(function(){"complete"===document.readyState?i.preparePopWait():i.addEventToElement(window,"load",i.preparePop)})}}},getCountFromCookie:function(){if(!this.config.cookieconsent)return 0;var e=popMagic.getCookie(popMagic.cookie_name),o=void 0===e?0:parseInt(e);return isNaN(o)&&(o=0),o},getLastOpenedTimeFromCookie:function(){var e=popMagic.getCookie(popMagic.cookie_name),o=null;if(e){var t=parseInt(e.split(";")[1]);o=0<t?t:0}return isNaN(o)&&(o=null),o},shouldShow:function(e){if(e=e||!1,!popMagic.config.capping_enabled){var o=!0,t=popMagic.config.should_fire;try{e||"function"!=typeof t||(o=Boolean(t()))}catch(e){console.error("Error executing should fire callback function:",e)}return o&&0===popMagic.open_count}if(popMagic.open_count>=popMagic.config.frequency_count)return!1;var i=popMagic.getCountFromCookie(),n=popMagic.getLastOpenedTimeFromCookie(),r=Math.floor(Date.now()/1e3),a=n+popMagic.config.trigger_delay;return!(n&&r<a)&&!((popMagic.open_count=i)>=popMagic.config.frequency_count)},venorShouldShow:function(){return popMagic.venor_loaded&&"0"===popMagic.venor},setAsOpened:function(e){var o=e?e.target||e.srcElement:null,t={id:"",tagName:"",classes:"",text:"",href:"",elm:""};void 0!==o&&null!=o&&(t={id:void 0!==o.id&&null!=o.id?o.id:"",tagName:void 0!==o.tagName&&null!=o.tagName?o.tagName:"",classes:void 0!==o.classList&&null!=o.classList?o.classList:"",text:void 0!==o.outerText&&null!=o.outerText?o.outerText:"",href:void 0!==o.href&&null!=o.href?o.href:"",elm:o});var i=new CustomEvent("creativeDisplayed-"+popMagic.config.idzone,{detail:t});if(document.dispatchEvent(i),popMagic.config.capping_enabled){var n=1;n=0!==popMagic.open_count?popMagic.open_count+1:popMagic.getCountFromCookie()+1;var r=Math.floor(Date.now()/1e3);popMagic.config.cookieconsent&&popMagic.setCookie(popMagic.cookie_name,n+";"+r,popMagic.config.frequency_period)}else++popMagic.open_count},loadHosted:function(){var e=document.createElement("script");for(var o in e.type="application/javascript",e.async=!0,e.src="//"+this.config.ads_host+"/popunder1000.js",e.id="popmagicldr",this.config)Object.prototype.hasOwnProperty.call(this.config,o)&&"ads_host"!==o&&"syndication_host"!==o&&e.setAttribute("data-msg-"+o,this.config[o]);var t=document.getElementsByTagName("body").item(0);t.firstChild?t.insertBefore(e,t.firstChild):t.appendChild(e)},preparePopWait:function(){setTimeout(popMagic.preparePop,400)},preparePop:function(){if("object"!=typeof msgJsPop101||!Object.prototype.hasOwnProperty.call(msgJsPop101,"add")){if(popMagic.top=self,popMagic.top!==self)try{top.document.location.toString()&&(popMagic.top=top)}catch(e){}if(popMagic.cookie_name="zone-cap-"+popMagic.config.idzone,popMagic.config.capping_enabled||(document.cookie=popMagic.cookie_name+"=;expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/"),popMagic.shouldShow(!0)){var e=new XMLHttpRequest;e.onreadystatechange=function(){e.readyState==XMLHttpRequest.DONE&&(popMagic.venor_loaded=!0,200==e.status?popMagic.venor=e.responseText:popMagic.venor="0")};var o=("https:"!==document.location.protocol&&"http:"!==document.location.protocol?"https:":document.location.protocol)+"//"+popMagic.config.syndication_host+"/venor.php?cookieconsent="+popMagic.config.cookieconsent;e.open("GET",popMagic.addNuvtValueToUrl(o),!0),e.withCredentials=!0;try{e.send()}catch(e){popMagic.venor_loaded=!0}}if(popMagic.buildUrl(),popMagic.browser=popMagic.browserDetector.getBrowserInfo(),popMagic.config.chrome_enabled||!popMagic.browser.isChrome){var t=popMagic.getPopMethod(popMagic.browser);popMagic.addEvent("click",t),popMagic.prefetchAgToken()}}},getPopMethod:function(e){return popMagic.config.popup_force?popMagic.methods.popup:popMagic.config.popup_fallback&&e.isChrome&&68<=e.version&&!e.isMobile?popMagic.methods.popup:e.isMobile?popMagic.methods.default:e.isChrome?popMagic.methods.chromeTab:popMagic.methods.default},checkTCFConsent:function(t){if(this.config.tcf_enabled&&"function"==typeof window.__tcfapi){var i=this;window.__tcfapi("addEventListener",2,function(e,o){o&&("tcloaded"!==(i.tcfData=e).eventStatus&&"useractioncomplete"!==e.eventStatus||(window.__tcfapi("removeEventListener",2,function(){},e.listenerId),t()))})}else t()},buildUrl:function(){var t,e="https:"!==document.location.protocol&&"http:"!==document.location.protocol?"https:":document.location.protocol,o=top===self?document.URL:document.referrer,i={type:"inline",name:"popMagic",ver:this.version},n="";customTargeting&&Object.keys(customTargeting).length&&("object"==typeof customTargeting?Object.keys(customTargeting):customTargeting).forEach(function(e){"object"==typeof customTargeting?t=customTargeting[e]:Array.isArray(customTargeting)&&(t=scriptEl.getAttribute(e));var o=e.replace("data-msg-","").replace(atob("ZGF0YS1leG8t"),"");n+="&"+o+"="+t});var r,a,c=this.tcfData&&this.tcfData.gdprApplies&&!0===this.tcfData.gdprApplies?1:0;this.url=e+"//"+this.config.syndication_host+"/v1/link.php?cat="+this.config.cat+"&idzone="+this.config.idzone+"&type=8&p="+encodeURIComponent(o)+"&sub="+this.config.sub+(""!==this.config.sub2?"&sub2="+this.config.sub2:"")+(""!==this.config.sub3?"&sub3="+this.config.sub3:"")+"&block=1&el="+this.config.el+"&tags="+this.config.tags+(""!==this.config.block_ad_types?"&block_ad_types="+this.config.block_ad_types:"")+"&scr_info="+(a=(r=i).type+"|"+r.name+"|"+r.ver,encodeURIComponent(btoa(a)))+n+"&gdpr="+c+"&cb="+Math.floor(1e9*Math.random()),this.tcfData&&this.tcfData.tcString?this.url+="&gdpr_consent="+encodeURIComponent(this.tcfData.tcString):this.url+="&cookieconsent="+this.config.cookieconsent},addSuvtValueToUrl:function(e){var o=popMagic.getCookie("__suvt");if(o){var t=-1!==e.indexOf("?")?"&":"?";return e+t+"suvt="+o}return e},addNuvtValueToUrl:function(e){var o=popMagic.getCookie("__nuvt");if(o){var t=-1!==e.indexOf("?")?"&":"?";return e+t+"nuvt="+encodeURIComponent(o)}return e},isAgegoEnabled:function(){return"undefined"!=typeof Promise&&void 0!==window.AGEGO&&!0===this.config.agego_cross_site_enabled},prefetchAgToken:function(){if(popMagic.isAgegoEnabled())try{window.AGEGO("prefetchToken")}catch(e){}},addAgeGoToken:function(o){if(!popMagic.isAgegoEnabled())return Promise.resolve(o);try{var e=window.AGEGO("getTokenUrl",o);return e&&"function"==typeof e.then?e:Promise.resolve(o)}catch(e){return Promise.resolve(o)}},addEventToElement:function(e,o,t){e.addEventListener?e.addEventListener(o,t,!1):e.attachEvent?(e["e"+o+t]=t,e[o+t]=function(){e["e"+o+t](window.event)},e.attachEvent("on"+o,e[o+t])):e["on"+o]=e["e"+o+t]},getTriggerClasses:function(){var e,o=[];-1===popMagic.config.trigger_class.indexOf(",")?e=popMagic.config.trigger_class.split(" "):e=popMagic.config.trigger_class.replace(/\s/g,"").split(",");for(var t=0;t<e.length;t++)""!==e[t]&&o.push("."+e[t]);return o},isNativeAdTarget:function(e){if(!e||"function"!=typeof e.closest)return!1;try{return null!==e.closest(popMagic.native_ad_class)}catch(e){return!1}},addEvent:function(e,o){var t,i=function(e){popMagic.isNativeAdTarget(e?e.target||e.srcElement:null)||o.call(this,e)};if("3"!=popMagic.config.trigger_method)if("2"!=popMagic.config.trigger_method||""==popMagic.config.trigger_class)if("4"!=popMagic.config.trigger_method||""==popMagic.config.trigger_class)if("5"!=popMagic.config.trigger_method||""==popMagic.config.trigger_class)popMagic.addEventToElement(document,e,i);else{var n="a"+popMagic.getTriggerClasses().map(function(e){return":not("+e+")"}).join("");t=document.querySelectorAll(n);for(var r=0;r<t.length;r++)popMagic.addEventToElement(t[r],e,i)}else{var a=popMagic.getTriggerClasses();popMagic.addEventToElement(document,e,function(o){a.some(function(e){return null!==o.target.closest(e)})||i.call(o.target,o)})}else{var c=popMagic.getTriggerClasses();for(t=document.querySelectorAll(c.join(", ")),r=0;r<t.length;r++)popMagic.addEventToElement(t[r],e,i)}else for(t=document.querySelectorAll("a"),r=0;r<t.length;r++)popMagic.addEventToElement(t[r],e,i)},setCookie:function(e,o,t){if(!this.config.cookieconsent)return!1;t=parseInt(t,10);var i=new Date;i.setMinutes(i.getMinutes()+parseInt(t));var n=encodeURIComponent(o)+"; expires="+i.toUTCString()+"; path=/";document.cookie=e+"="+n},getCookie:function(e){if(!this.config.cookieconsent)return!1;var o,t,i,n=document.cookie.split(";");for(o=0;o<n.length;o++)if(t=n[o].substr(0,n[o].indexOf("=")),i=n[o].substr(n[o].indexOf("=")+1),(t=t.replace(/^\s+|\s+$/g,""))===e)return decodeURIComponent(i)},randStr:function(e,o){for(var t="",i=o||"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",n=0;n<e;n++)t+=i.charAt(Math.floor(Math.random()*i.length));return t},isValidUserEvent:function(e){return!!("isTrusted"in e&&e.isTrusted&&"ie"!==popMagic.browser.name&&"safari"!==popMagic.browser.name)||0!=e.screenX&&0!=e.screenY},isValidHref:function(e){if(void 0===e||""==e)return!1;return!/\s?javascript\s?:/i.test(e)},findLinkToOpen:function(e){var o=e,t=!1;try{for(var i=0;i<20&&!o.getAttribute("href")&&o!==document&&"html"!==o.nodeName.toLowerCase();)o=o.parentNode,i++;var n=o.getAttribute("target");n&&-1!==n.indexOf("_blank")||(t=o.getAttribute("href"))}catch(e){}return popMagic.isValidHref(t)||(t=!1),t||window.location.href},getPuId:function(){return"ok_"+Math.floor(89999999*Math.random()+1e7)},executeOnRedirect:function(){try{popMagic.config.capping_enabled||"function"!=typeof popMagic.config.on_redirect||popMagic.config.on_redirect()}catch(e){console.error("Error executing on redirect callback:",e)}},browserDetector:{browserDefinitions:[["firefox",/Firefox\/([0-9.]+)(?:\s|$)/],["opera",/Opera\/([0-9.]+)(?:\s|$)/],["opera",/OPR\/([0-9.]+)(:?\s|$)$/],["edge",/Edg(?:e|)\/([0-9._]+)/],["ie",/Trident\/7\.0.*rv:([0-9.]+)\).*Gecko$/],["ie",/MSIE\s([0-9.]+);.*Trident\/[4-7].0/],["ie",/MSIE\s(7\.0)/],["safari",/Version\/([0-9._]+).*Safari/],["chrome",/(?!Chrom.*Edg(?:e|))Chrom(?:e|ium)\/([0-9.]+)(:?\s|$)/],["chrome",/(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9.]+)(:?\s|$)/],["bb10",/BB10;\sTouch.*Version\/([0-9.]+)/],["android",/Android\s([0-9.]+)/],["ios",/Version\/([0-9._]+).*Mobile.*Safari.*/],["yandexbrowser",/YaBrowser\/([0-9._]+)/],["crios",/CriOS\/([0-9.]+)(:?\s|$)/]],isChromeOrChromium:function(){var e=window.navigator,o=(e.userAgent||"").toLowerCase(),t=e.vendor||"";if(-1!==o.indexOf("crios"))return!0;if(e.userAgentData&&Array.isArray(e.userAgentData.brands)&&0<e.userAgentData.brands.length){var i=e.userAgentData.brands,n=i.some(function(e){return"Google Chrome"===e.brand}),r=i.some(function(e){return"Chromium"===e.brand})&&2===i.length;return n||r}var a=!!window.chrome,c=-1!==o.indexOf("edg"),p=!!window.opr||-1!==o.indexOf("opr"),s=!(!e.brave||!e.brave.isBrave),g=-1!==o.indexOf("vivaldi"),l=-1!==o.indexOf("yabrowser"),d=-1!==o.indexOf("samsungbrowser"),u=-1!==o.indexOf("ucbrowser");return a&&"Google Inc."===t&&!c&&!p&&!s&&!g&&!l&&!d&&!u},getBrowserInfo:function(){var e=window.navigator.userAgent,o={name:"other",version:"1.0",versionNumber:1,isChrome:this.isChromeOrChromium(),isMobile:!!e.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WebOS|Windows Phone/i)};for(var t in this.browserDefinitions){var i=this.browserDefinitions[t];if(i[1].test(e)){var n=i[1].exec(e),r=n&&n[1].split(/[._]/).slice(0,3),a=Array.prototype.slice.call(r,1).join("")||"0";r&&r.length<3&&Array.prototype.push.apply(r,1===r.length?[0,0]:[0]),o.name=i[0],o.version=r.join("."),o.versionNumber=parseFloat(r[0]+"."+a);break}}return o}},methods:{default:function(e){if(!popMagic.shouldShow()||!popMagic.venorShouldShow()||!popMagic.isValidUserEvent(e))return!0;var o=e.target||e.srcElement,t=popMagic.findLinkToOpen(o),i=popMagic.addSuvtValueToUrl(popMagic.url);return window.open(t,"_blank"),popMagic.setAsOpened(e),popMagic.executeOnRedirect(),popMagic.isAgegoEnabled()?popMagic.addAgeGoToken(i).then(function(e){popMagic.top.document.location=e}):popMagic.top.document.location=i,void 0!==e.preventDefault&&(e.preventDefault(),e.stopPropagation()),!0},chromeTab:function(e){if(!popMagic.shouldShow()||!popMagic.venorShouldShow()||!popMagic.isValidUserEvent(e))return!0;if(void 0===e.preventDefault)return!0;e.preventDefault(),e.stopPropagation();var o=popMagic.addSuvtValueToUrl(popMagic.url),t=top.window.document.createElement("a"),i=e.target||e.srcElement;t.href=popMagic.findLinkToOpen(i),document.getElementsByTagName("body")[0].appendChild(t);var n=new MouseEvent("click",{bubbles:!0,cancelable:!0,view:window,screenX:0,screenY:0,clientX:0,clientY:0,ctrlKey:!0,altKey:!1,shiftKey:!1,metaKey:!0,button:0});n.preventDefault=void 0,t.dispatchEvent(n),t.parentNode.removeChild(t),popMagic.executeOnRedirect(),popMagic.isAgegoEnabled()?popMagic.addAgeGoToken(o).then(function(e){window.open(e,"_self")}):window.open(o,"_self"),popMagic.setAsOpened(e)},popup:function(e){if(!popMagic.shouldShow()||!popMagic.venorShouldShow()||!popMagic.isValidUserEvent(e))return!0;var o="";if(popMagic.config.popup_fallback&&!popMagic.config.popup_force){var t=Math.max(Math.round(.8*window.innerHeight),300);o="menubar=1,resizable=1,width="+Math.max(Math.round(.7*window.innerWidth),300)+",height="+t+",top="+(window.screenY+100)+",left="+(window.screenX+100)}var i=document.location.href,n=window.open(i,popMagic.getPuId(),o);popMagic.setAsOpened(e),setTimeout(function(){popMagic.isAgegoEnabled()?popMagic.addAgeGoToken(popMagic.url).then(function(e){n.location.href=e,popMagic.executeOnRedirect()}):(n.location.href=popMagic.url,popMagic.executeOnRedirect())},200),void 0!==e.preventDefault&&(e.preventDefault(),e.stopPropagation())}}};    popMagic.init(adConfig);
-})();
-
-
-</script>
-
-
-
-<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
- <ins class="eas6a97888e6" data-zoneid="6072848"></ins> 
- <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
-<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
- <ins class="eas6a97888e2" data-zoneid="6066364"></ins> 
- <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
-
-  
-
-
-  
-
-
-  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="Afterglow is an adult-only editorial site exploring digital privacy, responsible adult media, creator rights and safer online habits.">
-  <meta name="robots" content="index,follow">
-
   <title>Afterglow — Adult Culture &amp; Digital Life</title>
-<link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Guides to digital privacy, creator rights, online safety, and responsible media.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b0a10">
 
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0a10;
+      --panel: #15121c;
+      --panel-light: #1c1825;
+      --text: #f5f1f7;
+      --muted: #b9b1c2;
+      --line: rgba(255,255,255,.12);
+      --accent: #f278ad;
+      --gold: #ffd700;
+      --max-width: 1160px;
+      --radius: 18px;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
 
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
 
-  
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
+    a {
+      color: inherit;
+    }
 
-<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
- <ins class="eas6a97888e2" data-zoneid="6066342"></ins> 
- <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin-inline: auto;
+    }
 
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      z-index: 20;
+      padding: 10px 14px;
+      background: white;
+      color: black;
+    }
 
+    .skip-link:focus {
+      left: 10px;
+    }
 
+    /* Header and navigation */
+    .site-header {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      width: min(var(--max-width), calc(100% - 32px));
+      min-height: 76px;
+      margin-inline: auto;
+      border-bottom: 1px solid var(--line);
+    }
 
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+    }
 
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      overflow: hidden;
+      background: var(--panel-light);
+      border-radius: 12px;
+    }
 
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  
-  
+    .brand-name {
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
 
-  
+    .brand-name small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .12em;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .main-nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      color: var(--text);
+    }
+
+    .menu-toggle {
+      display: none;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--panel);
+      color: var(--text);
+      font: inherit;
+    }
+
+    /* Ad placements */
+    .ad-slot {
+      display: grid;
+      min-height: 110px;
+      place-items: center;
+      width: 100%;
+      margin: 22px auto;
+      padding: 10px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,.025);
+      text-align: center;
+    }
+
+    .ad-slot--leaderboard {
+      max-width: 970px;
+      min-height: 120px;
+    }
+
+    .ad-slot--content {
+      max-width: 728px;
+      min-height: 100px;
+    }
+
+    .ad-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .ad-slot ins {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Main content */
+    main {
+      min-height: 60vh;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr);
+      gap: 22px;
+      align-items: stretch;
+      padding-block: 28px;
+    }
+
+    .card {
+      min-width: 0;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(29px, 5vw, 46px);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(23px, 3vw, 32px);
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 330px;
+      margin-top: 18px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: #100e15;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 8px 8px 0 0;
+      padding: 11px 16px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #1b1018;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      background: transparent;
+      color: var(--text);
+    }
+
+    .side-links {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .side-link {
+      display: block;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel-light);
+      text-decoration: none;
+    }
+
+    .side-link p {
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+
+    .section {
+      padding-block: 26px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      max-width: 540px;
+      margin: 0;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+    }
+
+    .article-card p {
+      margin-bottom: 10px;
+    }
+
+    .category {
+      display: inline-block;
+      margin-bottom: 9px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .read-link {
+      color: var(--text);
+      font-weight: 700;
+      text-decoration-color: var(--accent);
+      text-underline-offset: 4px;
+    }
+
+    /* Existing image collection */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .image-card {
+      margin: 0;
+      padding: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 190px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #100e15;
+    }
+
+    .image-card figcaption {
+      padding: 7px 3px 2px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .editorial-band {
+      margin-block: 24px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-light);
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 36px;
+      padding-block: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-block: 20px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-note,
+    .copyright {
+      font-size: 13px;
+    }
+
+    /* Age notice */
+    .age-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(5,4,8,.94);
+    }
+
+    .age-screen.show {
+      display: grid;
+    }
+
+    .age-card {
+      width: min(480px, 100%);
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      text-align: center;
+    }
+
+    .age-card .brand-mark {
+      margin-inline: auto;
+    }
+
+    .age-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-block: 18px;
+    }
+
+    .age-card small {
+      color: var(--muted);
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .article-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .image-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-header {
+        min-height: 66px;
+      }
+
+      .menu-toggle {
+        display: inline-block;
+      }
+
+      .main-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--panel);
+      }
+
+      .main-nav.open {
+        display: flex;
+      }
+
+      .main-nav a {
+        padding: 10px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .section-heading,
+      .footer-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .image-card img {
+        height: 150px;
+      }
+
+      .ad-slot {
+        min-height: 90px;
+        margin-block: 16px;
+      }
+    }
+  </style>
 </head>
 
-
-
-
-
-  
 <body>
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Age notice -->
   <div class="age-screen" id="age-screen"
-       role="dialog"
-       aria-modal="true"
-       aria-labelledby="age-title">
-
+       role="dialog" aria-modal="true" aria-labelledby="age-title">
     <div class="age-card">
-   
-<span class="brand-mark">
-  <img src="assets/favicon.png" alt="Afterglow logo">
-</span>  
-     
-     
-     
-     <img src="assets/favicon.png" alt="Afterglow logo">
-</span>
+      <span class="brand-mark">
+        <img src="assets/favicon.png" alt="Afterglow logo">
+      </span>
 
-      <p class="eyebrow">AGE-RESTRICTED WEBSITE</p>
-
+      <p class="eyebrow">Age-restricted website</p>
       <h1 id="age-title">Adults only. 18+</h1>
-
-      <p>
-        This website is intended for adults aged 18 and older.
-        By entering, you confirm that you meet the minimum legal
-        age to view this content in your location.
-      </p>
+      <p>This website is intended for adults aged 18 and older. By entering, you confirm that you meet the minimum legal age to view this content in your location.</p>
 
       <div class="age-actions">
-        <button class="button" id="age-yes">
-          I am 18 or older
-        </button>
-
-        <a class="button button-secondary"
-           href="https://www.google.com/"
-           rel="nofollow">
-          Leave site
-        </a>
+        <button class="button" id="age-yes" type="button">I am 18 or older</button>
+        <a class="button button-secondary" href="https://www.google.com/" rel="nofollow">Leave site</a>
       </div>
 
-      <small>
-        This age gate is a basic notice, not a legally sufficient
-        age-verification system in every jurisdiction.
-      </small>
+      <small>This notice is not a legally sufficient age-verification system in every jurisdiction.</small>
     </div>
   </div>
 
-  <!-- Header -->
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Afterglow home">
-     <span class="brand-mark">
-  <img src="assets/favicon.png" alt="Afterglow logo">
-</span>
-
-
-
-      
+      <span class="brand-mark">
+        <img src="assets/favicon.png" alt="">
+      </span>
       <span class="brand-name">
         afterglow
         <small>ADULT CULTURE · DIGITAL LIFE</small>
       </span>
     </a>
 
-    <button class="menu-toggle"
-            id="menu-toggle"
-            aria-expanded="false"
-            aria-controls="main-nav">
+    <button class="menu-toggle" id="menu-toggle"
+            type="button" aria-expanded="false" aria-controls="main-nav">
       Menu
     </button>
 
-    <nav id="main-nav" class="main-nav">
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="guides.html">Guides</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main id="main">
-
-    <!-- Hero -->
-<div class="cards-spacer" aria-hidden="true"></div>
-    
-    <section class="hero">
-     
-
-
-
- 
-<!-- =========================================
-     FIRST CARD — TWO INDEPENDENT SECTIONS
-     تقسيم البطاقة الأولى أفقياً إلى قسمين
-     ========================================= -->
-
-<div class="hero-main" id="first-card">
-
-  <!-- ===== القسم العلوي: البطاقة الأولى ===== -->
-
-  <div class="first-card-top" id="first-card-top">
-
-
-
-    <!-- 1. العبارة الصغيرة -->
-    <p class="eyebrow" id="first-card-label">
-      EARN FROM YOUR FILMS
-    </p>
-
-
-
-
-
-
-    
- <!-- بداية رابط العنوان: الضغط على العنوان يفتح صفحة المقال -->
-<a href="./article1.html" style="color: inherit; text-decoration: none;">
-
-  <!-- العنوان الأصلي مع الحفاظ على شكله -->
-  <h1 id="first-card-title">
-    Achieve your dreams with <br>
-    creative actors.
-  </h1>
-
-</a>
-<!-- نهاية رابط العنوان -->
-
-
-
-
-
-
-
-<!-- بداية رابط الصورة -->
-<a href="./article1.html">
-  <img
-    src="./assets/ل329 copy.png"
-    alt="صورة المقال"
-    class="article-second-image"
-  >
-</a>
-<!-- نهاية رابط الصورة -->
-    
-    
-    
-    <div class="dollar-gold">$</div>
-<div class="arabic-gold">
-  
-  
-  
-
-
-Get a complete guide to monetizing your clips.
-
-All celebrities enjoy freedom, respect, and privacy.
-
-Share your clips and enjoy exciting and new experiences.
-
-1. For the Homepage:
-
-Earn real profits from every clip you publish. Our platform gives you complete freedom, total privacy, and the respect you deserve. Join the elite of celebrities and start your journey now.
-
-2. For Security and Privacy:
-
-Your privacy is our priority. All your clips are protected with the highest security and encryption standards. You control who watches your clips, when, and how. Enjoy complete freedom and security.
-
-3. To Encourage Publishing:
-
-Don't leave your clips on your phone. Turn them into a monthly income source. Every view means profit. Share your creativity, build your audience, and enjoy exclusive benefits you won't find anywhere else.
-
-4. For Celebrities:
-
-Join the elite community. Here, celebrities enjoy freedom, earn with dignity, and maintain their privacy. Your place among us is reserved.
-
-5. Call to Action:
-
-What are you waiting for? Register now for free, get your complete earning guide, and start monetizing your clips in less than 5 minutes.
-
-
-
-
-
-
-
-
-</div>
-
-
-  
-
-    
-    <!-- 3. الفقرة الأولى -->
-    <p id="first-card-text">
-      Earn More from Your Exclusive Videos!
-
-      Share your own adult videos through a secure platform and increase your earnings with a fair revenue-sharing system. No interference, no control over your content. Join, share, and experience it yourself!.
-    </p>
-
-    <!-- 4. الفقرة الإضافية -->
-    <p id="first-card-text-2">
-      Discover useful information, explore new ideas,
-      and learn through clear and independent editorial content.
-    </p>
-
-    <!-- 5. العنوان الفرعي -->
-    <h2 id="first-card-subtitle">
-      Explore more possibilities
-    </h2>
-
-    <!-- 6. الزر الأول -->
-    <a class="button" id="first-card-button" href="guides.html">
-      Explore the guides
-      <span aria-hidden="true">↗</span>
-    </a>
-
-    <!-- 7. الزر الثاني -->
-    <a class="button button-secondary" id="first-card-button-2" href="11.html">
-      Discover more
-      <span aria-hidden="true">↗</span>
-    </a>
-
-  </div>
-
-  <!-- ===== فاصل بين القسمين ===== -->
-
-  <div class="first-card-divider"></div>
-
-  <!-- ===== القسم السفلي: نسخة مستقلة ===== -->
-
-  <div class="first-card-bottom" id="second-card">
-
-    <!-- 1. العبارة الصغيرة -->
-   <p class="eyebrow" id="second-card-label">
-  
-  <span style="color:#ffffff;">     HIGH</span>
-  <span style="color:#FFD700;">★★★</span>
-  <span style="color:#ff0020;">★★</span>
-</p>
-
-    <!-- 2. العنوان الرئيسي -->
-    <h1 id="second-card-title">
-      Make your dick ston.
-    </h1>
-
-
-<img
-  src="./assets/10copy.jpg"
-  alt="صورة المقال"
-  class="article-second-image"
->
-
-
-
-
-
-    <!-- 3. الفقرة الأولى -->
-    <p id="second-card-text">
-      Learn how to make your dick as hard as iron, everything you want for pleasure is here with tips and guidance to make you more confident and more eager for sex..
-    </p>
-
-
-    
-<img
-  src="./assets/1cop0y.png"
-  alt="صورة المقال"
-  class="article-second-image"
->
-
-
-
-    
-
-    
-    <!-- 4. الفقرة الإضافية -->
-    <p id="second-card-text-2">
-      Add another paragraph here.
-    </p>
-
-
-
-    
-<img
-  src="./3op0y.png"
-  alt="صورة المقال"
-  class="article-second-image"
->
-
-
-
-
-<img
-  src="./assets/2cop0y.png"
-  alt="صورة المقال"
-  class="article-second-image"
->
-
-
-<img
-  src="./assets/0652 copy.png"
-  alt="صورة المقال"
-  class="article-second-image"
->
-    
-    
-
-
-
-
-<img
-  src="./assets/25201 copy.png"
-  alt="صورة المقال"
-  class="article-second-image"
->
-
-
-
-
-
-
-
-<img
-  src="./assets/6 c1copy.png"
-  alt="صورة المقال"
-  class="article-second-image"
->
-
-
-    
-
-<img
-  src="./assets/yty.png"
-  alt="صورة المقال"
-  class="article-second-image"
->
-
-
-
-
-
-    
-    <!-- 5. العنوان الفرعي -->
-    <h2 id="second-card-subtitle">
-      Your second subtitle
-    </h2>
-
-    <!-- 6. الزر الأول -->
-    <a class="button" id="second-card-button" href="guides.html">
-      Explore the guides
-      <span aria-hidden="true">↗</span>
-    </a>
-
-    <!-- 7. الزر الثاني -->
-    <a class="button button-secondary" id="second-card-button-2" href="11.html">
-      Discover more
-      <span aria-hidden="true">↗</span>
-    </a>
-
-  </div>
-
-</div>
-
-<!-- =========================================
-     END OF TWO INDEPENDENT SECTIONS
-     ========================================= -->
-
-
-
-      
- <div class="hero-side">
-
-   
-   
-   
-  <!-- صور أعلى البطاقة الثانية -->
-<div class="top-images">
-  <div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20115753%20copy.png" alt="1"><span class="txt">نص 1</span></div>
-  <div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20122458%20copy.png" alt="2"><span class="txt">نص 2</span></div>
-  <div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20122611%20copy.png" alt="3"><span class="txt">نص 3</span></div>
-  <div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20122700%20copy.png" alt="4"><span class="txt">نص 4</span></div>
-  <div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20122755%20copy.png" alt="5"><span class="txt">نص 5</span></div>
-  <div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20122859%20copy.png" alt="6"><span class="txt">نص 6</span></div>
-  <div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20123243%20copy.png" alt="7"><span class="txt">نص 7</span></div>
-  <div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20124415%20copy.png" alt="8"><span class="txt">نص 8</span></div>
-  <div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20124621%20copy.png" alt="9"><span class="txt">نص 9</span></div>
-  <div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20125455%20copy.png" alt="10"><span class="txt">نص 10</span></div>
-<div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20115753%20copy.png" alt="1"><span class="txt">نص 1</span></div>
-
-<div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20122458%20copy.png" alt="2"><span class="txt">نص 2</span></div>
-
-<div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20122611%20copy.png" alt="3"><span class="txt">نص 3</span></div>
-
-<div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20122700%20copy.png" alt="4"><span class="txt">نص 4</span></div>
-
-<div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20122755%20copy.png" alt="5"><span class="txt">نص 5</span></div>
-
-<div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20122859%20copy.png" alt="6"><span class="txt">نص 6</span></div>
-
-<div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20123243%20copy.png" alt="7"><span class="txt">نص 7</span></div>
-
-<div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20124415%20copy.png" alt="8"><span class="txt">نص 8</span></div>
-
-<div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20124621%20copy.png" alt="9"><span class="txt">نص 9</span></div>
-
-<div class="item"><img src="assets/لقطة%20شاشة%202026-11-01%20125455%20copy.png" alt="10"><span class="txt">نص 10</span></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div><!-- نهاية الصور --> 
-   
-   
-   
-   
-   
-   
-   
-   <a class="mini-article" href="11.html">
-    <div class="mini-article-content">
-      <h3>Digital Privacy</h3>
-      <p>Learn how to protect your privacy online.</p>
-    </div>
-  </a>
-
-  <a class="mini-article" href="consent-and-rights.html">
-    <div class="mini-article-content">
-      <h3>Creator Rights</h3>
-      <p>Discover consent, ownership, and respect.</p>
-    </div>
-  </a>
-
-  <a class="mini-article" href="healthy-boundaries.html">
-    <div class="mini-article-content">
-      <h3>Healthy Relationships</h3>
-      <p>Explore trust and healthy boundaries.</p>
-    </div>
-  </a>
-
-  <a class="mini-article" href="responsible-platforms.html">
-    <div class="mini-article-content">
-      <h3>Safer Platforms</h3>
-      <p>Learn about safer online experiences.</p>
-    </div>
-  </a>
-</div>
-
-
-      
-    </section>
-
-    <!-- Editorial promises -->
-    <section class="feature-row" aria-label="Editorial promises">
-      <div class="feature">
-        <strong>✦ Original editorial content</strong>
-        <p>Practical explainers written for this publication.</p>
+  <main id="main" class="container">
+
+    <!-- Top banner ad -->
+    <div class="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
+      <div>
+        <span class="ad-label">Advertisement</span>
+        <ins class="eas6a97888e17" data-zoneid="6072874"></ins>
       </div>
+    </div>
 
-      <div class="feature">
-        <strong>◎ Consent and rights matter</strong>
-        <p>We oppose leaked, stolen and non-consensual material.</p>
-      </div>
+    <section class="hero" aria-label="Featured content">
+      <article class="card">
+        <p class="eyebrow">Digital life · Privacy · Creator rights</p>
+        <h1>Thoughtful guides for a safer online experience.</h1>
+        <p>Explore practical information about digital privacy, online safety, creator rights, and responsible media.</p>
 
+        <a class="button" href="guides.html">Explore the guides <span aria-hidden="true">↗</span></a>
+        <a class="button button-secondary" href="article1.html">Featured article <span aria-hidden="true">↗</span></a>
 
+        <a href="article1.html">
+          <img class="hero-image"
+               src="assets/%D9%84329%20copy.png"
+               alt="Featured article image"
+               fetchpriority="high">
+        </a>
+      </article>
 
+      <aside class="card" aria-label="Popular guides">
+        <p class="eyebrow">Start here</p>
+        <h2>Popular topics</h2>
 
-
-      
-      <div class="feature">
-        <strong>◌ Built for every screen</strong>
-        <p>Responsive layouts, readable text and clear navigation.</p>
-      </div>
-    </section>
-
-
-
-      <div class="ad-message">
-        <strong>Publisher ad placement</strong>
-
-        <p>
-          This is an advertising placement for the configured
-          advertising network.
-        </p>
-      </div>
-    </section>
-
-    <!-- Articles -->
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">START HERE</p>
-          <h2>Explore our latest guides</h2>
+        <div class="side-links">
+          <a class="side-link" href="11.html">
+            <strong>Digital Privacy</strong>
+            <p>Learn how to protect your privacy online.</p>
+          </a>
+          <a class="side-link" href="consent-and-rights.html">
+            <strong>Creator Rights</strong>
+            <p>Discover consent, ownership, and respect.</p>
+          </a>
+          <a class="side-link" href="healthy-boundaries.html">
+            <strong>Healthy Relationships</strong>
+            <p>Explore trust and healthy boundaries.</p>
+          </a>
+          <a class="side-link" href="responsible-platforms.html">
+            <strong>Safer Platforms</strong>
+            <p>Learn about safer online experiences.</p>
+          </a>
         </div>
+      </aside>
+    </section>
 
-        <p>
-          Useful reading on privacy, technology, media literacy
-          and a healthier relationship with online content.
-        </p>
+    <!-- Second banner ad -->
+    <div class="ad-slot ad-slot--content" aria-label="Advertisement">
+      <div>
+        <span class="ad-label">Advertisement</span>
+        <ins class="eas6a97888e35" data-zoneid="6072866"></ins>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="guides-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Start here</p>
+          <h2 id="guides-title">Explore our latest guides</h2>
+        </div>
+        <p>Useful reading on privacy, technology, media literacy, and a healthier relationship with online content.</p>
       </div>
 
       <div class="article-grid">
-
-        <article class="article-card"
-                 data-search="Private Browsing Privacy">
+        <article class="article-card">
           <span class="category">Privacy</span>
-
-          <h3>
-            <a href="privacy-first-browsing.html">
-              Private Browsing: What It Does—and What It Does Not
-            </a>
-          </h3>
-
-          <p>
-            Private browsing can be useful, but it is not an
-            invisibility cloak. Learn what it saves, what it clears,
-            and which other parties may still see activity.
-          </p>
-
-          <a class="read-link" href="privacy-first-browsing.html">
-            Read guide →
-          </a>
+          <h3><a href="privacy-first-browsing.html">Private Browsing: What It Does—and What It Does Not</a></h3>
+          <p>Learn what private browsing saves, what it clears, and which other parties may still see activity.</p>
+          <a class="read-link" href="privacy-first-browsing.html">Read guide →</a>
         </article>
 
-        <article class="article-card"
-                 data-search="Adult Platform Media Literacy">
+        <article class="article-card">
           <span class="category">Media literacy</span>
-
-          <h3>
-            <a href="responsible-platforms.html">
-              How to Evaluate an Adult Platform Responsibly
-            </a>
-          </h3>
-
-          <p>
-            A polished interface is not proof that a platform is
-            safe or ethical. Use practical checks before trusting
-            a site or paying for access.
-          </p>
-
-          <a class="read-link" href="responsible-platforms.html">
-            Read guide →
-          </a>
+          <h3><a href="responsible-platforms.html">How to Evaluate an Adult Platform Responsibly</a></h3>
+          <p>Use practical checks before trusting a site or paying for access.</p>
+          <a class="read-link" href="responsible-platforms.html">Read guide →</a>
         </article>
 
-        <article class="article-card"
-                 data-search="Deceptive Ads Security">
+        <article class="article-card">
           <span class="category">Security</span>
-
-          <h3>
-            <a href="deceptive-ads.html">
-              How to Recognize Deceptive Ads and Unsafe Redirects
-            </a>
-          </h3>
-
-          <p>
-            Advertising supports many free sites, but ads should
-            never impersonate browser warnings or force you away
-            from the page. Learn how to identify suspicious behavior.
-          </p>
-
-          <a class="read-link" href="deceptive-ads.html">
-            Read guide →
-          </a>
+          <h3><a href="deceptive-ads.html">How to Recognize Deceptive Ads and Unsafe Redirects</a></h3>
+          <p>Learn how to identify suspicious advertising and unsafe redirects.</p>
+          <a class="read-link" href="deceptive-ads.html">Read guide →</a>
         </article>
 
-        <article class="article-card"
-                 data-search="Online Subscriptions Payments Security">
+        <article class="article-card">
           <span class="category">Security</span>
-
-          <h3>
-            <a href="secure-payments.html">
-              A Safer Checklist for Online Subscriptions and Payments
-            </a>
-          </h3>
-
-          <p>
-            A few minutes of checking before checkout can help
-            prevent unwanted renewals, account compromise and
-            avoidable disputes.
-          </p>
-
-          <a class="read-link" href="secure-payments.html">
-            Read guide →
-          </a>
+          <h3><a href="secure-payments.html">A Paymentsa></h3>
+          <p>Check before checkout to help prevent unwanted renewals and avoidable disputes.</p>
+          <a class="read-link" href="secure-payments.html">Read guide →</a>
         </article>
 
-        <article class="article-card"
-                 data-search="Cookies Tracking Privacy">
-          <span class="category">Privacy</span>
+        <article class="article-card">
+3-slot ad-slot--content" aria-label="Advertisement">
+      <div>
+        <span class="ad-label">Advertisement</span>
+        <ins class="eas6a97888e6" data-zoneid="284ins>
+      </div>
+    </div>
 
-          <h3>
-            <a href="cookies-and-tracking.html">
-              Cookies, Tracking, and What a Website Can Learn
-            </a>
-          </h3>
-
-          <p>
-            Cookies are only one part of online tracking.
-            Understand common technologies and choices that can
-            meaningfully reduce unwanted data collection.
-          </p>
-
-          <a class="read-link" href="cookies-and-tracking.html">
-            Read guide →
-          </a>
-        </article>
-
-        <article class="article-card"
-                 data-search="Digital Boundaries Wellbeing">
-          <span class="category">Wellbeing</span>
-
-          <h3>
-            <a href="healthy-boundaries.html">
-              Building Healthy Digital Boundaries
-            </a>
-          </h3>
-
-          <p>
-            Thoughtful digital boundaries can help keep online
-            activities intentional and compatible with sleep,
-            relationships and responsibilities.
-          </p>
-
-          <a class="read-link" href="healthy-boundaries.html">
-            Read guide →
-          </a>
-        </article>
-
+="section-heading">
+        <div>
+          <p class="eyebrow">Image collection</p>
+          <h2 id="gallery-title">Featured images</h2>
+        </div>
+        <p>Images are linked from the existing files in the repository.</p>
       </div>
 
-      <p style="margin-top:24px">
-        <a class="button button-secondary" href="guides.html">
-          Browse all guides
-        </a>
-      </p>
+      <div class="image-grid">
+        <figure class="image-card">
+          <img src="assets/10copy.jpg" alt="Featured image 1" loading="lazy">
+          <figcaption>Featured image</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/1cop0y.png" alt="Featured image 2" loading="lazy">
+          <figcaption>Featured image</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="3op0y.png" alt="Featured image 3" loading="lazy">
+          <figcaption>Featured image</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/2cop0y.png" alt="Featured image 4" loading="lazy">
+          <figcaption>Featured image</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/0652%20copy.png" alt="Featured image 5" loading="lazy">
+          <figcaption>Featured image</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/25201%20copy.png" alt="Featured image 6" loading="lazy">
+          <figcaption>Featured image</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/6%20c1copy.png" alt="Featured image 7" loading="lazy">
+          <figcaption>Featured image</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/yty.png" alt="Featured image 8" loading="lazy">
+          <figcaption>Featured image</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20115753%20copy.png" alt="Screenshot 1" loading="lazy">
+          <figcaption>Screenshot</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122458%20copy.png" alt="Screenshot 2" loading="lazy">
+          <figcaption>Screenshot</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122611%20copy.png" alt="Screenshot 3" loading="lazy">
+          <figcaption>Screenshot</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122700%20copy.png" alt="Screenshot 4" loading="lazy">
+          <figcaption>Screenshot</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122755%20copy.png" alt="Screenshot 5" loading="lazy">
+          <figcaption>Screenshot</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122859%20copy.png" alt="Screenshot 6" loading="lazy">
+          <figcaption>Screenshot</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20123243%20copy.png" alt="Screenshot 7" loading="lazy">
+          <figcaption>Screenshot</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20124415%20copy.png" alt="Screenshot 8" loading="lazy">
+          <figcaption>Screenshot</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20124621%20copy.png" alt="Screenshot 9" loading="lazy">
+          <figcaption>Screenshot</figcaption>
+        </figure>
+
+        <figure class="image-card">
+          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20125455%20copy.png" alt="Screenshot 10" loading="lazy">
+          <figcaption>Screenshot</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <!-- Editorial standards -->
+    <!-- Another ad placement -->
+    <div class="ad-slot ad-slot--content" aria-label="Advertisement">
+      <div>
+        <span class="ad-label">Advertisement</span>
+        <ins class="eas6a97888e2" data-zoneid="6066364"></ins>
+      </div>
+    </div>
+
     <section class="editorial-band">
-      <p class="eyebrow">OUR EDITORIAL PROMISE</p>
-
-      <h2>
-        Adult content still deserves safety, accountability and respect.
-      </h2>
-
-      <p>
-        Afterglow is an editorial guide, not a hosting service for
-        explicit media. We focus on responsible discovery and digital
-        wellbeing. We do not knowingly promote underage, coercive,
-        leaked or non-consensual content, and we provide a route for
-        rights holders to contact the operator.
-      </p>
+      <p class="eyebrow">Our editorial promise</p>
+      <h2>Adult content still deserves safety, accountability, and respect.</h2>
+      <p>Afterglow is an editorial guide focused on responsible discovery and digital wellbeing. We oppose underage,-consensual content.</p>
     </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-top">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">A</span>
+    <div class="container">
+      <div class="footer-top">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">
+            <img src="assets/favicon.png" alt="">
+          </span>
+          <span class="brand-name">
+            afterglow
+            <small>ADULT CULTURE · DIGITAL LIFE</small>
+          </span>
+        </a>
+        <p>Thoughtful guides for a more informed, private, and respectful online experience.</p>
+      </div>
 
-        <span class="brand-name">
-          afterglow
-          <small>ADULT CULTURE · DIGITAL LIFE</small>
-        </span>
-      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="guides.html">Guides</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="dmca.html">Copyright &amp; Takedowns</a>
+      </nav>
 
-      <p>
-        Thoughtful guides for a more informed, private
-        and respectful online experience.
-      </p>
+      <p class="footer-note">18+ only. Follow local laws. No illegal, non-consensual, or underage content is permitted.</p>
+      <p class="copyright">© <span data-year></span> Afterglow. All rights reserved.</p>
     </div>
-
-    <div class="footer-links">
-      <a href="guides.html">Guides</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="dmca.html">Copyright &amp; Takedowns</a>
-    </div>
-
-    <p class="footer-note">
-      18+ only. Follow local laws. No illegal, non-consensual,
-      or underage content is permitted.
-    </p>
-
-    <p class="copyright">
-      © <span data-year></span> Afterglow.
-      All rights reserved.
-    </p>
   </footer>
 
+  <!-- Ad provider scripts are loaded once; popup/pop-under code is intentionally omitted. -->
+  <script async src="https://a.magsrv.com/ad-provider.js"></script>
+  <script async src="https://a.pemsrv.com/ad-provider.js"></script>
+  <script>
+    window.AdProvider = window.AdProvider || [];
+    document.querySelectorAll('.ad-slot ins').forEach(function () {
+      window.AdProvider.push({ serve: {} });
+    });
+  </script>
+
+  <script src="site.js"></script>
 </body>
 </html>
