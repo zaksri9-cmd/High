@@ -352,19 +352,17 @@
   <script>
     // Small fallback for the age dialog and mobile menu if site.js has no handlers.
     (function () {
-      var ageScreen = document.getElementById('age-screen');
-      var ageButton = document.getElementById('age-yes');
-      var menuButton = document.getElementById('menu-toggle');
-      var nav = document.getElementById('main-nav');
-      var year = document.querySelector('[data-year]');
-      if (year) year.textContent = new Date().getFullYear();
-      try {
-        if (ageScreen && localStorage.getItem('afterglow-age-confirmed') !== 'yes') ageScreen.classList.add('show');
-      } catch (e) { if (ageScreen) ageScreen.classList.add('show'); }
-      if (ageButton && ageScreen) ageButton.addEventListener('click', function () {
-        ageScreen.classList.remove('show');
-        try { localStorage.setItem('afterglow-age-confirmed', 'yes'); } catch (e) {}
-      });
+    
+
+
+
+
+
+
+
+
+
+      
       if (menuButton && nav) menuButton.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         menuButton.setAttribute('aria-expanded', String(open));
