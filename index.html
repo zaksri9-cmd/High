@@ -1,58 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Afterglow — adult culture and digital life.">
+  <title>Afterglow</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <style>
+    /* =========================================================
+       AFTERGLOW — RESPONSIVE VIDEO-STYLE IMAGE GALLERY
+       Change the values below to control the gallery appearance.
+       ========================================================= */
+    :root {
+      --page-bg: #101114;       /* Page background */
+      --panel-bg: #191b20;      /* Header and ad background */
+      --text: #f4f4f5;          /* Main text */
+      --muted: #a5a7ad;         /* Secondary text */
+      --line: #292c33;          /* Thin borders */
+      --gallery-gap: 14px;      /* Space between images */
+      --image-radius: 9px;      /* Image corner roundness */
+      --image-ratio: 4 / 3;     /* Image frame proportions */
+      --play-size: 30px;        /* Red video icon size */
+      --play-red: #e52d3c;      /* Video icon color */
+      --content-width: 1500px;  /* Maximum page width */
+    }
 
-const images = [
-    "3op0y.png",
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .container {
+      width: min(calc(100% - 32px), var(--content-width));
+      margin-inline: auto;
+    }
 
-    "assets/0652 copy.png",
-    "assets/10copy.jpg",
-    "assets/1cop0y.png",
-    "assets/25201 copy.png",
-    "assets/2cop0y.png",
-    "assets/6 c1copy.png",
-    "assets/yty.png",
-
-    "assets/ل329 copy.png",
-
-    "assets/لقطة شاشة 2026-11-01 115753 copy.png",
-    "assets/لقطة شاشة 2026-11-01 122458 copy.png",
-    "assets/لقطة شاشة 2026-11-01 122611 copy.png",
-    "assets/لقطة شاشة 2026-11-01 122700 copy.png",
-    "assets/لقطة شاشة 2026-11-01 122755 copy.png",
-    "assets/لقطة شاشة 2026-11-01 122859 copy.png",
-    "assets/لقطة شاشة 2026-11-01 123243 copy.png",
-    "assets/لقطة شاشة 2026-11-01 124415 copy.png",
-    "assets/لقطة شاشة 2026-11-01 124621 copy.png",
-    "assets/لقطة شاشة 2026-11-01 125455 copy.png"
-];
-
-const gallery = document.getElementById("gallery");
-
-images.forEach((src, index) => {
-    const link = document.createElement("a");
-    link.href = src;
-    link.target = "_blank";
-
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = "Afterglow image " + (index + 1);
-    img.loading = index < 6 ? "eager" : "lazy";
-
-    img.onerror = () => link.remove();
-
-    link.appendChild(img);
-    gallery.appendChild(link);
-});
-
-    .footer-links a {
+    /* Slim responsive header */
+    .site-header {
+      min-height: 62px;
+      padding: 8px max(16px, calc((100% - var(--content-width)) / 2));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: #14161a;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 5;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #24262c;
+    }
+    .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
+    .brand-name {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+    .brand-name small {
+      display: block;
       color: var(--muted);
+      font-size: 8px;
+      font-weight: 500;
+      letter-spacing: 1.1px;
+      line-height: 1.2;
+    }
+    .main-nav { display: flex; align-items: center; gap: 22px; }
+    .main-nav a {
+      color: #d4d5d9;
+      font-size: 13px;
       text-decoration: none;
     }
-
-    .footer-note,
-    .copyright {
-      font-size: 13px;
+    .main-nav a:hover { color: #fff; }
+    .menu-toggle {
+      display: none;
+      padding: 7px 11px;
+      color: var(--text);
+      background: #24262c;
+      border: 1px solid var(--line);
+      border-radius: 7px;
     }
 
-    /* Age notice */
+    /* Ad slots stay separate from the image grid and never cover it. */
+    .ad-slot {
+      width: 100%;
+      min-height: 90px;
+      margin: 18px auto;
+      padding: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background: var(--panel-bg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      text-align: center;
+    }
+    .ad-inner { width: 100%; min-width: 0; }
+    .ad-label {
+      display: block;
+      margin-bottom: 5px;
+      color: #858891;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .ad-slot ins { display: block; max-width: 100%; }
+
+    /* Five columns on desktop. Images have no text or captions. */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: var(--gallery-gap);
+      padding-block: 4px;
+    }
+    .video-tile {
+      position: relative;
+      display: block;
+      min-width: 0;
+      aspect-ratio: var(--image-ratio);
+      overflow: hidden;
+      background: #202229;
+      border: 1px solid #30333b;
+      border-radius: var(--image-radius);
+      text-decoration: none;
+      isolation: isolate;
+    }
+    .video-tile img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .25s ease, filter .25s ease;
+    }
+    .video-tile:hover img {
+      transform: scale(1.035);
+      filter: brightness(.82);
+    }
+    /* Small elegant red play icon; no words are placed on images. */
+    .play-icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: var(--play-size);
+      height: var(--play-size);
+      transform: translate(-50%, -50%);
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--play-red);
+      box-shadow: 0 2px 9px #0009;
+      pointer-events: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .play-icon svg { width: 12px; height: 12px; margin-left: 2px; fill: #fff; }
+    .video-tile:hover .play-icon {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: #f03949;
+    }
+
+    .site-footer {
+      margin-top: 26px;
+      padding: 24px 0 18px;
+      border-top: 1px solid var(--line);
+      background: #14161a;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .footer-top p, .footer-note, .copyright {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      margin-top: 18px;
+    }
+    .footer-links a {
+      color: var(--muted);
+      font-size: 12px;
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-note { margin-top: 18px; }
+    .copyright { margin-bottom: 0; }
+
+    /* Age confirmation overlay retained from the existing website. */
     .age-screen {
       position: fixed;
       inset: 0;
@@ -60,154 +217,98 @@ images.forEach((src, index) => {
       display: none;
       place-items: center;
       padding: 20px;
-      background: rgba(5,4,8,.94);
+      background: rgba(5, 4, 8, .95);
     }
-
-    .age-screen.show {
-      display: grid;
-    }
-
+    .age-screen.show { display: grid; }
     .age-card {
-      width: min(480px, 100%);
-      padding: 26px;
+      width: min(460px, 100%);
+      padding: 25px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel);
+      border-radius: 12px;
+      background: var(--panel-bg);
       text-align: center;
     }
-
-    .age-card .brand-mark {
-      margin-inline: auto;
-    }
-
+    .age-card .brand-mark { margin: 0 auto 12px; }
+    .age-card h1 { margin: 8px 0; font-size: 25px; }
+    .age-card p { color: #d0d1d5; font-size: 14px; }
+    .age-card small { color: var(--muted); }
     .age-actions {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px;
-      margin-block: 18px;
+      gap: 9px;
+      margin: 18px 0;
     }
-
-    .age-card small {
-      color: var(--muted);
+    .button {
+      display: inline-block;
+      padding: 9px 14px;
+      border: 1px solid #e52d3c;
+      border-radius: 7px;
+      background: #e52d3c;
+      color: #fff;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
     }
+    .button-secondary { border-color: var(--line); background: #252830; }
 
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .article-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .image-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+    /* Tablet: four columns. Phone: exactly two columns. */
+    @media (max-width: 1000px) {
+      .gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     }
-
-    @media (max-width: 600px) {
-      .site-header {
-        min-height: 66px;
-      }
-
-      .menu-toggle {
-        display: inline-block;
-      }
-
+    @media (max-width: 700px) {
+      .container { width: min(calc(100% - 20px), var(--content-width)); }
+      .site-header { min-height: 58px; padding-inline: 10px; }
+      .menu-toggle { display: inline-block; }
       .main-nav {
         position: absolute;
         top: calc(100% + 1px);
-        right: 0;
-        left: 0;
+        right: 10px;
+        left: 10px;
         display: none;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 8px;
+        padding: 7px;
         border: 1px solid var(--line);
-        border-radius: 12px;
-        background: var(--panel);
+        border-radius: 9px;
+        background: #191b20;
       }
-
-      .main-nav.open {
-        display: flex;
-      }
-
-      .main-nav a {
-        padding: 10px;
-      }
-
-      .card {
-        padding: 20px;
-      }
-
-      .section-heading,
-      .footer-top {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .article-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .image-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .image-card img {
-        height: 150px;
-      }
-
-      .ad-slot {
-        min-height: 90px;
-        margin-block: 16px;
-      }
+      .main-nav.open { display: flex; }
+      .main-nav a { padding: 10px; }
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+      .ad-slot { min-height: 90px; margin-block: 12px; }
+      .footer-top { align-items: flex-start; flex-direction: column; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
     }
   </style>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a href="#main" style="position:absolute;left:-9999px;">Skip to content</a>
 
-  <!-- Age notice -->
-  <div class="age-screen" id="age-screen"
-       role="dialog" aria-modal="true" aria-labelledby="age-title">
+  <!-- Age confirmation -->
+  <div class="age-screen" id="age-screen" role="dialog" aria-modal="true" aria-labelledby="age-title">
     <div class="age-card">
-      <span class="brand-mark">
-        <img src="assets/favicon.png" alt="Afterglow logo">
-      </span>
-
-      <p class="eyebrow">Age-restricted website</p>
+      <span class="brand-mark"><img src="assets/favicon.png" alt="Afterglow"></span>
+      <p>AGE-RESTRICTED WEBSITE</p>
       <h1 id="age-title">Adults only. 18+</h1>
       <p>This website is intended for adults aged 18 and older. By entering, you confirm that you meet the minimum legal age to view this content in your location.</p>
-
       <div class="age-actions">
         <button class="button" id="age-yes" type="button">I am 18 or older</button>
         <a class="button button-secondary" href="https://www.google.com/" rel="nofollow">Leave site</a>
       </div>
-
       <small>This notice is not a legally sufficient age-verification system in every jurisdiction.</small>
     </div>
   </div>
 
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Afterglow home">
-      <span class="brand-mark">
-        <img src="assets/favicon.png" alt="">
-      </span>
-      <span class="brand-name">
-        afterglow
-        <small>ADULT CULTURE · DIGITAL LIFE</small>
-      </span>
+      <span class="brand-mark"><img src="assets/favicon.png" alt=""></span>
+      <span class="brand-name">afterglow<small>ADULT CULTURE · DIGITAL LIFE</small></span>
     </a>
-
-    <button class="menu-toggle" id="menu-toggle"
-            type="button" aria-expanded="false" aria-controls="main-nav">
-      Menu
-    </button>
-
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
     <nav class="main-nav" id="main-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="guides.html">Guides</a>
@@ -216,257 +317,63 @@ images.forEach((src, index) => {
   </header>
 
   <main id="main" class="container">
-
-    <!-- Top banner ad -->
-    <div class="ad-slot ad-slot--leaderboard" aria-label="Advertisement">
-      <div>
-        <span class="ad-label">Advertisement</span>
-        <ins class="eas6a97888e17" data-zoneid="6072874"></ins>
-      </div>
+    <!-- Advertisement placement 1 -->
+    <div class="ad-slot" aria-label="Advertisement">
+      <div class="ad-inner"><span class="ad-label">Advertisement</span><ins class="eas6a97888e17" data-zoneid="6072874"></ins></div>
     </div>
 
-    <section class="hero" aria-label="Featured content">
-      <article class="card">
-        <p class="eyebrow">Digital life · Privacy · Creator rights</p>
-        <h1>Thoughtful guides for a safer online experience.</h1>
-        <p>Explore practical information about digital privacy, online safety, creator rights, and responsible media.</p>
-
-        <a class="button" href="guides.html">Explore the guides <span aria-hidden="true">↗</span></a>
-        <a class="button button-secondary" href="article1.html">Featured article <span aria-hidden="true">↗</span></a>
-
-        <a href="article1.html">
-          <img class="hero-image"
-               src="assets/%D9%84329%20copy.png"
-               alt="Featured article image"
-               fetchpriority="high">
-        </a>
-      </article>
-
-      <aside class="card" aria-label="Popular guides">
-        <p class="eyebrow">Start here</p>
-        <h2>Popular topics</h2>
-
-        <div class="side-links">
-          <a class="side-link" href="11.html">
-            <strong>Digital Privacy</strong>
-            <p>Learn how to protect your privacy online.</p>
-          </a>
-          <a class="side-link" href="consent-and-rights.html">
-            <strong>Creator Rights</strong>
-            <p>Discover consent, ownership, and respect.</p>
-          </a>
-          <a class="side-link" href="healthy-boundaries.html">
-            <strong>Healthy Relationships</strong>
-            <p>Explore trust and healthy boundaries.</p>
-          </a>
-          <a class="side-link" href="responsible-platforms.html">
-            <strong>Safer Platforms</strong>
-            <p>Learn about safer online experiences.</p>
-          </a>
-        </div>
-      </aside>
+    <!-- Gallery group 1 -->
+    <section class="gallery" id="gallery" aria-label="Image gallery">
+      <a class="video-tile" href="assets/0652%20copy.png" target="_blank" rel="noopener"><img src="assets/0652%20copy.png" alt="Gallery image 1" fetchpriority="high"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/10copy.jpg" target="_blank" rel="noopener"><img src="assets/10copy.jpg" alt="Gallery image 2" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/1cop0y.png" target="_blank" rel="noopener"><img src="assets/1cop0y.png" alt="Gallery image 3" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/25201%20copy.png" target="_blank" rel="noopener"><img src="assets/25201%20copy.png" alt="Gallery image 4" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/2cop0y.png" target="_blank" rel="noopener"><img src="assets/2cop0y.png" alt="Gallery image 5" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/6%20c1copy.png" target="_blank" rel="noopener"><img src="assets/6%20c1copy.png" alt="Gallery image 6" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/yty.png" target="_blank" rel="noopener"><img src="assets/yty.png" alt="Gallery image 7" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/%D9%84329%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84329%20copy.png" alt="Gallery image 8" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
     </section>
 
-    <!-- Second banner ad -->
-    <div class="ad-slot ad-slot--content" aria-label="Advertisement">
-      <div>
-        <span class="ad-label">Advertisement</span>
-        <ins class="eas6a97888e35" data-zoneid="6072866"></ins>
-      </div>
+    <!-- Advertisement placement 2 -->
+    <div class="ad-slot" aria-label="Advertisement">
+      <div class="ad-inner"><span class="ad-label">Advertisement</span><ins class="eas6a97888e35" data-zoneid="6072866"></ins></div>
     </div>
 
-    <section class="section" aria-labelledby="guides-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Start here</p>
-          <h2 id="guides-title">Explore our latest guides</h2>
-        </div>
-        <p>Useful reading on privacy, technology, media literacy, and a healthier relationship with online content.</p>
-      </div>
-
-      <div class="article-grid">
-        <article class="article-card">
-          <span class="category">Privacy</span>
-          <h3><a href="privacy-first-browsing.html">Private Browsing: What It Does—and What It Does Not</a></h3>
-          <p>Learn what private browsing saves, what it clears, and which other parties may still see activity.</p>
-          <a class="read-link" href="privacy-first-browsing.html">Read guide →</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category">Media literacy</span>
-          <h3><a href="responsible-platforms.html">How to Evaluate an Adult Platform Responsibly</a></h3>
-          <p>Use practical checks before trusting a site or paying for access.</p>
-          <a class="read-link" href="responsible-platforms.html">Read guide →</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category">Security</span>
-          <h3><a href="deceptive-ads.html">How to Recognize Deceptive Ads and Unsafe Redirects</a></h3>
-          <p>Learn how to identify suspicious advertising and unsafe redirects.</p>
-          <a class="read-link" href="deceptive-ads.html">Read guide →</a>
-        </article>
-
-        <article class="article-card">
-          <span class="category">Security</span>
-          <h3><a href="secure-payments.html">A Paymentsa></h3>
-          <p>Check before checkout to help prevent unwanted renewals and avoidable disputes.</p>
-          <a class="read-link" href="secure-payments.html">Read guide →</a>
-        </article>
-
-        <article class="article-card">
-3-slot ad-slot--content" aria-label="Advertisement">
-      <div>
-        <span class="ad-label">Advertisement</span>
-        <ins class="eas6a97888e6" data-zoneid="284ins>
-      </div>
-    </div>
-
-="section-heading">
-        <div>
-          <p class="eyebrow">Image collection</p>
-          <h2 id="gallery-title">Featured images</h2>
-        </div>
-        <p>Images are linked from the existing files in the repository.</p>
-      </div>
-
-      <div class="image-grid">
-        <figure class="image-card">
-          <img src="assets/10copy.jpg" alt="Featured image 1" loading="lazy">
-          <figcaption>Featured image</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/1cop0y.png" alt="Featured image 2" loading="lazy">
-          <figcaption>Featured image</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="3op0y.png" alt="Featured image 3" loading="lazy">
-          <figcaption>Featured image</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/2cop0y.png" alt="Featured image 4" loading="lazy">
-          <figcaption>Featured image</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/0652%20copy.png" alt="Featured image 5" loading="lazy">
-          <figcaption>Featured image</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/25201%20copy.png" alt="Featured image 6" loading="lazy">
-          <figcaption>Featured image</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/6%20c1copy.png" alt="Featured image 7" loading="lazy">
-          <figcaption>Featured image</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/yty.png" alt="Featured image 8" loading="lazy">
-          <figcaption>Featured image</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20115753%20copy.png" alt="Screenshot 1" loading="lazy">
-          <figcaption>Screenshot</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122458%20copy.png" alt="Screenshot 2" loading="lazy">
-          <figcaption>Screenshot</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122611%20copy.png" alt="Screenshot 3" loading="lazy">
-          <figcaption>Screenshot</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122700%20copy.png" alt="Screenshot 4" loading="lazy">
-          <figcaption>Screenshot</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122755%20copy.png" alt="Screenshot 5" loading="lazy">
-          <figcaption>Screenshot</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122859%20copy.png" alt="Screenshot 6" loading="lazy">
-          <figcaption>Screenshot</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20123243%20copy.png" alt="Screenshot 7" loading="lazy">
-          <figcaption>Screenshot</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20124415%20copy.png" alt="Screenshot 8" loading="lazy">
-          <figcaption>Screenshot</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20124621%20copy.png" alt="Screenshot 9" loading="lazy">
-          <figcaption>Screenshot</figcaption>
-        </figure>
-
-        <figure class="image-card">
-          <img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20125455%20copy.png" alt="Screenshot 10" loading="lazy">
-          <figcaption>Screenshot</figcaption>
-        </figure>
-      </div>
+    <!-- Gallery group 2 -->
+    <section class="gallery" aria-label="More images">
+      <a class="video-tile" href="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20115753%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20115753%20copy.png" alt="Gallery image 9" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122458%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122458%20copy.png" alt="Gallery image 10" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122611%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122611%20copy.png" alt="Gallery image 11" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122700%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122700%20copy.png" alt="Gallery image 12" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122755%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122755%20copy.png" alt="Gallery image 13" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122859%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20122859%20copy.png" alt="Gallery image 14" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20123243%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20123243%20copy.png" alt="Gallery image 15" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20124415%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20124415%20copy.png" alt="Gallery image 16" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20124621%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20124621%20copy.png" alt="Gallery image 17" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
+      <a class="video-tile" href="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20125455%20copy.png" target="_blank" rel="noopener"><img src="assets/%D9%84%D9%82%D8%B7%D8%A9%20%D8%B4%D8%A7%D8%B4%D8%A9%202026-11-01%20125455%20copy.png" alt="Gallery image 18" loading="lazy"><span class="play-icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3.2c0-.6.65-.95 1.15-.62l7 4.3a1.3 1.3 0 0 1 0 2.22l-7 4.3A.72.72 0 0 1 5 12.78z"/></svg></span></a>
     </section>
 
-    <!-- Another ad placement -->
-    <div class="ad-slot ad-slot--content" aria-label="Advertisement">
-      <div>
-        <span class="ad-label">Advertisement</span>
-        <ins class="eas6a97888e2" data-zoneid="6066364"></ins>
-      </div>
+    <!-- Advertisement placement 3 -->
+    <div class="ad-slot" aria-label="Advertisement">
+      <div class="ad-inner"><span class="ad-label">Advertisement</span><ins class="eas6a97888e2" data-zoneid="6066364"></ins></div>
     </div>
-
-    <section class="editorial-band">
-      <p class="eyebrow">Our editorial promise</p>
-      <h2>Adult content still deserves safety, accountability, and respect.</h2>
-      <p>Afterglow is an editorial guide focused on responsible discovery and digital wellbeing. We oppose underage,-consensual content.</p>
-    </section>
-
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">
-            <img src="assets/favicon.png" alt="">
-          </span>
-          <span class="brand-name">
-            afterglow
-            <small>ADULT CULTURE · DIGITAL LIFE</small>
-          </span>
-        </a>
+        <a class="brand" href="index.html"><span class="brand-mark"><img src="assets/favicon.png" alt=""></span><span class="brand-name">afterglow<small>ADULT CULTURE · DIGITAL LIFE</small></span></a>
         <p>Thoughtful guides for a more informed, private, and respectful online experience.</p>
       </div>
-
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="guides.html">Guides</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="dmca.html">Copyright &amp; Takedowns</a>
+        <a href="guides.html">Guides</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="dmca.html">Copyright &amp; Takedowns</a>
       </nav>
-
       <p class="footer-note">18+ only. Follow local laws. No illegal, non-consensual, or underage content is permitted.</p>
       <p class="copyright">© <span data-year></span> Afterglow. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Ad provider scripts are loaded once; popup/pop-under code is intentionally omitted. -->
+  <!-- Load the ad provider once, then request each ad slot. -->
   <script async src="https://a.magsrv.com/ad-provider.js"></script>
   <script async src="https://a.pemsrv.com/ad-provider.js"></script>
   <script>
@@ -476,6 +383,29 @@ images.forEach((src, index) => {
     });
   </script>
 
+  <!-- Keep the site's existing age/menu/year behavior. -->
   <script src="site.js"></script>
+  <script>
+    // Small fallback for the age dialog and mobile menu if site.js has no handlers.
+    (function () {
+      var ageScreen = document.getElementById('age-screen');
+      var ageButton = document.getElementById('age-yes');
+      var menuButton = document.getElementById('menu-toggle');
+      var nav = document.getElementById('main-nav');
+      var year = document.querySelector('[data-year]');
+      if (year) year.textContent = new Date().getFullYear();
+      try {
+        if (ageScreen && localStorage.getItem('afterglow-age-confirmed') !== 'yes') ageScreen.classList.add('show');
+      } catch (e) { if (ageScreen) ageScreen.classList.add('show'); }
+      if (ageButton && ageScreen) ageButton.addEventListener('click', function () {
+        ageScreen.classList.remove('show');
+        try { localStorage.setItem('afterglow-age-confirmed', 'yes'); } catch (e) {}
+      });
+      if (menuButton && nav) menuButton.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(open));
+      });
+    })();
+  </script>
 </body>
 </html>
